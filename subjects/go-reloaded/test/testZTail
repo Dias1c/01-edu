@@ -1,0 +1,68 @@
+echo "-=-=-===========-=-=-"
+echo "-=-=- Test Doop -=-=-"
+echo "-=-=-===========-=-=-"
+cd ../ztail
+echo "===== Main Tests ====="
+go run . text.txt
+tail text.txt
+echo "---------"
+go run . nv
+tail nv
+echo "---------"
+go run . text.txt text.txt
+tail text.txt text.txt
+echo "---------"
+go run . text.txt nv
+tail text.txt nv
+echo "---------"
+go run . nv text.txt nv
+tail nv text.txt nv
+echo "---------"
+go run . -c text.txt
+tail -c text.txt
+echo "---------"
+go run . -c 11 text.txt
+tail -c 11 text.txt
+echo "---------"
+go run . -c -11 text.txt
+tail -c -11 text.txt
+echo "---------"
+go run . -c 11 text.txt text.txt
+tail -c 11 text.txt text.txt
+echo "---------"
+go run . -c 11 text.txt nv
+tail -c 11 text.txt nv
+echo "---------"
+go run . -c 11 nv text.txt nv
+tail -c 11 nv text.txt nv
+echo "---------"
+go run . -c 1 nv text.txt nv -c 11
+tail -c 1 nv text.txt nv -c 11
+echo "---------"
+go run . -c jelrjq 15
+tail     -c jelrjq 15
+echo "---------"
+go run . -c 11 text.txt aadas
+tail     -c 11 text.txt aadas
+echo "---------"
+go run . -c -11 text.txt
+tail     -c -11 text.txt
+echo "---------"
+go run . -c -11 text.txt aaa
+tail     -c -11 text.txt aaa
+echo "---------"
+go run . -c --11 text.txt -c -11
+tail     -c --11 text.txt -c -11
+echo "---------"
+go run . -c --11 text.txt -c ""
+tail     -c --11 text.txt -c ""
+echo "---------"
+go run . -c 18446744073709551615 text.txt
+tail -c 18446744073709551615 text.txt
+echo "---------"
+go run . -c -18446744073709551615 text.txt
+tail -c -18446744073709551615 text.txt
+echo "---------"
+go run . -c 18446744073709551617 text.txt
+tail -c 18446744073709551617 text.txt
+echo "---------"
