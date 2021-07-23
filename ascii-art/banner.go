@@ -3,33 +3,24 @@ package asciiart
 import (
 	"bufio"
 	"fmt"
-	"io"
 	"os"
 )
 
 var GBanner [95][8]string
 
-// import banner from file
-func ImportBanner() {
-	file, err := os.Open("themes/" + GConfigs.FileTheme)
+// Import Banner From File To GBanner
+func ImportBanner() error {
+	filename := "themes/" + GConfigs.Theme + ".txt"
+	file, err := os.Open(filename)
 	if err != nil {
-		CloseProgram(err)
+		return err
 	}
 	defer file.Close()
-	//todo
 	charInd, lineInd := 0, -1
-	reader := bufio.NewReader(file)
-	for {
-		str, err := reader.ReadString(byte(10))
-		if err != nil {
-			if err == io.EOF {
-				break
-			} else {
-				CloseProgram(err)
-			}
-		}
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
 		if lineInd > -1 {
-			GBanner[charInd][lineInd] = str[:len(str)-1]
+			GBanner[charInd][lineInd] = scanner.Text()
 		}
 		lineInd++
 		if lineInd == 8 {
@@ -37,6 +28,7 @@ func ImportBanner() {
 			charInd++
 		}
 	}
+	return nil
 }
 
 //Printing Str With Banner

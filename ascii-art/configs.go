@@ -1,57 +1,72 @@
 package asciiart
 
-import (
-	"encoding/json"
-	"fmt"
-	"os"
-)
+import "errors"
 
 type Configs struct {
-	FileTheme string `json: "FileTheme"`
-	Color     string `json: "Color"`
+	ThemeArg   bool
+	Theme      string
+	ColorArg   bool
+	Color      string
+	OutputArg  bool
+	Output     string
+	AlignArg   bool
+	Align      string
+	ReverseArg bool
+	Reverse    string
 }
 
-// Set GConfigs From File
-// Creating Configs File if not exists
-func ReadConfigs() error {
-	fileName := "configs.json"
-	dataInBytes, err := os.ReadFile(fileName)
-
-	//  Creating "configs.json" IF NOT EXISTS
-	if err != nil {
-		return SaveConfigs()
+func (c *Configs) ImportTheme(option string) bool {
+	switch option {
+	case "standard":
+		c.Theme = option
+		c.ThemeArg = true
+		return true
+	case "thinkertoy":
+		c.Theme = option
+		c.ThemeArg = true
+		return true
+	case "shadow":
+		c.Theme = option
+		c.ThemeArg = true
+		return true
+	default:
+		return false
 	}
+}
 
-	// Set Configs From File
-	err = json.Unmarshal(dataInBytes, GConfigs)
-	if err != nil {
-		fmt.Println(err.Error())
-		return err
-	}
+func (c *Configs) ImportColor(option string) error {
+	//todo
+	c.ColorArg = true
+	c.Color = option
 	return nil
 }
 
-// Save GConfigs to File
-// Creating Configs File if not exists
-func SaveConfigs() error {
-	fileName := "configs.json"
-	dataInBytes, err := json.Marshal(GConfigs)
-	if err != nil {
-		return err
-	}
-	file, err := os.Create(fileName)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-	_, err = file.Write(dataInBytes)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
+func (c *Configs) ImportOutput(option string) error {
+	//todo
+	c.OutputArg = true
+	c.Output = option
 	return nil
 }
 
-// func SaveConfigsFromParams() error {
+func (c *Configs) ImportAlign(option string) error {
+	//todo
+	c.AlignArg = true
+	c.Align = option
+	return nil
+}
 
-// }
+func (c *Configs) ImportReverse(option string) error {
+	//todo
+	c.ReverseArg = true
+	c.Reverse = option
+	return nil
+}
+
+var (
+	ErrNoArgument    = errors.New("Program needs at least one argument")
+	ErrNoReceiving   = errors.New("Program needs one received argument (not including options) or \"reverse\" option only")
+	ErrManyReceiving = errors.New("Program needs only one received argument")
+	ErrSingleReverse = errors.New("Program needs one received argument to print or \"reverse\" option only")
+	ErrArgument      = errors.New("Wrong given argument")
+	ErrNotHandleArg  = errors.New("This program do not handle that argument")
+)
