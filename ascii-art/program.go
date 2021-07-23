@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"regexp"
-	"strings"
 )
 
 var GConfigs = Configs{Theme: "standard"}
@@ -25,6 +24,7 @@ var GConfigs = Configs{Theme: "standard"}
 // }
 
 func Program(params []string) {
+	// Import Arguments into GConfig
 	received, imported, err, hint := ImportParams(params)
 	if err != nil {
 		CloseProgramAndHint(err, hint)
@@ -32,13 +32,31 @@ func Program(params []string) {
 		CloseProgram(ErrSingleReverse)
 	} else if !imported && !GConfigs.ReverseArg {
 		CloseProgram(ErrNoReceiving)
+	} else if GConfigs.Conflict() {
+		CloseProgramAndHint(ErrConflictArgs, GConfigs.ConflictHint())
 	}
+	// Import Banner
 	err = ImportBanner()
 	if err != nil {
 		CloseProgram(err)
 	}
+	// todo Reverse
+	if GConfigs.ReverseArg {
+		CloseProgram(nil)
+	}
+	// Get Graphic Representation of Received String
 	received = GetFormattedString(received)
-	PrintWithBanner(received)
+	gr, err, hint := GetGraphicRepresentation(received)
+	if err != nil {
+		CloseProgramAndHint(err, hint)
+	}
+	// Output to File
+	if GConfigs.OutputArg {
+		CloseProgram(nil)
+	}
+	// Print in Terminal
+	// to do with color and align
+	PrintGraphicRepresentation(gr)
 }
 
 // Close Program with Error if err != nil
@@ -51,6 +69,7 @@ func CloseProgram(err error) {
 	}
 }
 
+// Close Program with Hint
 func CloseProgramAndHint(err error, hint string) {
 	if err != nil {
 		fmt.Println(err)
@@ -59,11 +78,6 @@ func CloseProgramAndHint(err error, hint string) {
 	} else {
 		os.Exit(0)
 	}
-}
-
-// Add New Line in String
-func GetFormattedString(str string) string {
-	return strings.ReplaceAll(str, "\\n", "\n")
 }
 
 // Imports Params Into GConfigs and Returns Received Strings

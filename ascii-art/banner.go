@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 var GBanner [95][8]string
 
-// Import Banner From File To GBanner
+// Import Banner From File to GBanner
 func ImportBanner() error {
 	filename := "themes/" + GConfigs.Theme + ".txt"
 	file, err := os.Open(filename)
@@ -31,37 +32,58 @@ func ImportBanner() error {
 	return nil
 }
 
-//Printing Str With Banner
-func PrintWithBanner(str string) {
-	symbols := []rune(str)
-	count := len(symbols)
-	checkPoint := 0
-	for idx, lineInd := 0, 0; idx <= count && lineInd < 8; idx++ {
-		if idx == count || symbols[idx] == '\n' {
-			fmt.Println()
-			if lineInd == 7 && idx < count && symbols[idx] == '\n' {
-				checkPoint, idx = idx+1, idx+1
-				for ; idx < count && symbols[idx] == '\n'; checkPoint, idx = idx+1, idx+1 {
-					fmt.Print("\n")
-				}
-				lineInd = 0
-			} else if lineInd < 7 {
-				lineInd++
-				idx = checkPoint
+// Get GR of Received String and Return It
+func GetGraphicRepresentation(received string) ([][]string, error, string) {
+	var gr [][]string
+	cnt := strings.Count(received, "\n") + 1
+	gr = make([][]string, cnt)
+	// Handle Empty String
+	if len(received) < 1 {
+		return gr, nil, ""
+	}
+	// Split String in New Lines and Representate It
+	splited := strings.Split(received, "\n")
+	for i := 0; i < cnt; i++ {
+		// If Splited Text is Empty
+		if len(splited[i]) < 1 {
+			gr[i] = []string{""}
+			continue
+		}
+		// Use strings.Builder
+		gr[i] = make([]string, 8)
+		var builder [8]strings.Builder
+		for _, symbol := range splited[i] {
+			if symbol < ' ' || symbol > '~' {
+				return gr, ErrWrongSymbol, string(symbol)
 			}
-			if idx == count {
-				break
+			gbInd := int(symbol - ' ')
+			for j := 0; j < 8; j++ {
+				builder[j].WriteString(GBanner[gbInd][j])
 			}
 		}
-		_PrintBannerLine(symbols[idx], lineInd)
+		// Fill gr from builder and Check Ending Space
+		endWithSpace := strings.HasSuffix(splited[i], " ")
+		for j := 0; j < 8; j++ {
+			gr[i][j] = builder[j].String()
+			if !endWithSpace {
+				gr[i][j] = strings.TrimRight(gr[i][j], " ")
+			}
+		}
 	}
+	return gr, nil, ""
 }
 
-func _PrintBannerLine(symbol rune, lineInd int) {
-	charInd := int(symbol - ' ')
-	if lineInd == 8 || symbol < 32 || 126 < symbol {
-		return
-	} else if -1 < lineInd && lineInd < 8 {
-		fmt.Print(GBanner[charInd][lineInd])
+// Replace "\n" to New Line in String
+func GetFormattedString(str string) string {
+	return strings.ReplaceAll(str, "\\n", "\n")
+}
+
+// Simple Print GR
+// to do for align and color
+func PrintGraphicRepresentation(gr [][]string) {
+	for i := range gr {
+		for j := range gr[i] {
+			fmt.Println(gr[i][j])
+		}
 	}
 }

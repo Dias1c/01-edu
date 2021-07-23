@@ -34,6 +34,24 @@ func (c *Configs) ImportTheme(option string) bool {
 	}
 }
 
+func (c *Configs) Conflict() bool {
+	if c.ReverseArg && (c.AlignArg || c.OutputArg || c.ColorArg) {
+		return true
+	} else if c.OutputArg && (c.AlignArg || c.ReverseArg || c.ColorArg) {
+		return true
+	}
+	return false
+}
+
+func (c *Configs) ConflictHint() string {
+	if c.ReverseArg && (c.AlignArg || c.OutputArg || c.ColorArg) {
+		return "reverse and (align or output or color)"
+	} else if c.OutputArg && (c.AlignArg || c.ReverseArg || c.ColorArg) {
+		return "output and (align or reverse or color)"
+	}
+	return ""
+}
+
 func (c *Configs) ImportColor(option string) error {
 	//todo
 	c.ColorArg = true
@@ -68,5 +86,7 @@ var (
 	ErrManyReceiving = errors.New("Program needs only one received argument")
 	ErrSingleReverse = errors.New("Program needs one received argument to print or \"reverse\" option only")
 	ErrArgument      = errors.New("Wrong given argument")
+	ErrConflictArgs  = errors.New("Given options are conflicting")
 	ErrNotHandleArg  = errors.New("This program do not handle that argument")
+	ErrWrongSymbol   = errors.New("There are unexpected symbol")
 )
