@@ -1,6 +1,7 @@
 package asciiart
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"regexp"
@@ -52,7 +53,23 @@ func Program(params []string) {
 	}
 	// Output to File
 	if GConfigs.OutputArg {
-		CloseProgram(nil)
+		file, err := os.OpenFile(GConfigs.Output, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0755)
+		if err != nil {
+			CloseProgram(err)
+		}
+		defer file.Close()
+		writer := bufio.NewWriter(file)
+		for i := range gr {
+			for j := range gr[i] {
+				_, err = writer.WriteString(gr[i][j])
+				if err != nil {
+					CloseProgram(err)
+				}
+				writer.WriteRune('\n')
+			}
+		}
+		err = writer.Flush()
+		CloseProgram(err)
 	}
 	// Print in Terminal
 	// to do with color and align
