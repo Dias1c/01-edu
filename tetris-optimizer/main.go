@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"tetrisoptimizer"
+	"tetrisoptimizer/tetrisoptimizer"
 )
 
 func main() {

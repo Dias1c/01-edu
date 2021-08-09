@@ -1,5 +1,0 @@
-package tetrisoptimizer
-
-func ReadFile() {
-
-}
