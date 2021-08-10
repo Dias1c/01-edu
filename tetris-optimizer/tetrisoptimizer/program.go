@@ -9,6 +9,9 @@ func Program(args []string) {
 	_CheckForCountArgs(args)
 	filepath := args[0]
 	fmt.Printf("FilePath: %v\n", filepath)
+	tetrimonies := _GetTetrimonysFromFile(filepath)
+	fmt.Println(tetrimonies)
+
 }
 
 func _CheckForCountArgs(args []string) {
