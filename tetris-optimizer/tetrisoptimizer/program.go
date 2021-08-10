@@ -8,9 +8,12 @@ import (
 func Program(args []string) {
 	_CheckForCountArgs(args)
 	filepath := args[0]
-	fmt.Printf("FilePath: %v\n", filepath)
+	// fmt.Printf("FilePath: %v\n", filepath)
 	tetrimonies := _GetTetrimonysFromFile(filepath)
-	fmt.Println(tetrimonies)
+
+	for _, fig := range tetrimonies {
+		ShowMatrix(fig.Figure)
+	}
 
 }
 
