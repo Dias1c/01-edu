@@ -7,7 +7,19 @@ import (
 )
 
 type tetrimony struct {
-	Figure [][]bool
+	Figure        [][]bool
+	Width, Height int
+}
+
+func (tetrim *tetrimony) Constructor(lines []string) {
+	matrix := make([][]rune, 4)
+	for i, line := range lines {
+		matrix[i] = []rune(line)
+	}
+	figure := checkAndGetMatrixForFigure(matrix)
+	tetrim.Figure = figure
+	tetrim.Height = len(figure)
+	tetrim.Width = len(figure[0])
 }
 
 func _GetTetrimonysFromFile(filepath string) []*tetrimony {
@@ -47,15 +59,6 @@ func _GetTetrimonysFromFile(filepath string) []*tetrimony {
 		_CloseProgram(_ErrorIncorrectTetrimonyInFile)
 	}
 	return tetrimonies
-}
-
-func (tetrim *tetrimony) Constructor(lines []string) {
-	matrix := make([][]rune, 4)
-	for i, line := range lines {
-		matrix[i] = []rune(line)
-	}
-	figure := checkAndGetMatrixForFigure(matrix)
-	tetrim.Figure = figure
 }
 
 func getCornerPositionsMatrix(matrix [][]rune) (int, int, int, int) {
@@ -141,18 +144,4 @@ func getSquareFromIsland(matrix [][]rune, width, height, y, x int) int {
 		cnt += getSquareFromIsland(matrix, width, height, y, x-1)
 	}
 	return cnt
-}
-
-func ShowMatrix(matrix [][]bool) {
-	fmt.Println("Show Matrix")
-	for _, line := range matrix {
-		for _, v := range line {
-			if v {
-				fmt.Printf("#")
-			} else {
-				fmt.Printf(".")
-			}
-		}
-		fmt.Println()
-	}
 }

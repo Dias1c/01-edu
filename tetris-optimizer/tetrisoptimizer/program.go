@@ -10,16 +10,27 @@ func Program(args []string) {
 	filepath := args[0]
 	// fmt.Printf("FilePath: %v\n", filepath)
 	tetrimonies := _GetTetrimonysFromFile(filepath)
+	result := Match(tetrimonies)
+	result.PrintBoard()
+}
 
-	for _, fig := range tetrimonies {
-		ShowMatrix(fig.Figure)
+func Match(tetrimonies []*tetrimony) *board {
+	result := &board{}
+	result.Constructor(tetrimonies)
+	isMatch := false
+	for !isMatch {
+		isMatch = _FindSmallestSquare(tetrimonies, result, 1)
+		if !isMatch {
+			result.Width++
+			result.Refactor()
+		}
 	}
-
+	return result
 }
 
 func _CheckForCountArgs(args []string) {
 	if len(args) != 1 {
-		_CloseProgram("Count arguments != 1;")
+		_CloseProgram(_ErrorCountArgsNE1)
 	}
 }
 

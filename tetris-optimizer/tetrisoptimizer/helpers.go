@@ -13,3 +13,11 @@ func getMax(a, b int) int {
 	}
 	return a
 }
+
+func getNearSqrtNum(num int) int {
+	res := 2
+	for ; res*res < num; res++ {
+
+	}
+	return res
+}
