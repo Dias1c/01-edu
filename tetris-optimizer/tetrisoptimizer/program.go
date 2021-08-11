@@ -8,7 +8,6 @@ import (
 func Program(args []string) {
 	_CheckForCountArgs(args)
 	filepath := args[0]
-	// fmt.Printf("FilePath: %v\n", filepath)
 	tetrimonies := _GetTetrimonysFromFile(filepath)
 	result := Match(tetrimonies)
 	result.PrintBoard()
