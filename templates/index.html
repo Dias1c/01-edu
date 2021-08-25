@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>🎵 groupie-tracker</title>
+</head>
+
+<body>
+    <div class="header">
+        <h2>groupie-tracker</h2>
+        <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank" class="textlink">Dias1c</a> | Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank" class="textlink">here</a></p>
+    </div>
+    <div class="container container--divided">
+        <!-- FILTER -->
+        <form class="container_filter" id="container_filter">
+            <div class="filter-top">
+                <h2 class="filter-title">Filter</h2>
+                <button class="btn btn--gray" type="submit" @click="showByFilter">
+                    Submit
+                </button>
+            </div>
+
+            <div class="filter_category">
+                <div class="input-group">
+                    <label class="label">Search</label>
+                    <input class="textbox w100" type="text" name="text" placeholder="Artist" v-model="cardName"
+                        required />
+                </div>
+                <div class="input-group">
+                    <label class="label">Category</label>
+                    <div class="checkbox">
+                        <input class="checkbox_input" type="checkbox" id="SelectAllCategories" @click="selectAll"
+                            v-model="allCategorySelected" />
+                        <label class="checkbox_input" for="SelectAllCategories">Select All</label>
+                    </div>
+                    <div class="checkbox" v-for="category in categories" :key="category.id">
+                        <input class="checkbox_input" type="checkbox" :value="category.Name" :id="category.Name"
+                            v-model="checkedCategories" checked="" />
+                        <label class="checkbox_text" :for="category.Name">{{
+                      category.Name
+                    }}</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="label">Price Range</label>
+                    <div class="side2">
+                        <input class="textbox w40" type="number" placeholder="0" v-model="priceFrom" />
+                        <input class="textbox w40" type="number" placeholder="99999999" v-model="priceEnd" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="label">Sorting</label>
+                    <div class="checkbox">
+                        <input type="radio" id="one" value="asc" v-model="orderBy" />
+                        <label for="one">Asc</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="radio" id="two" value="desc" v-model="orderBy" />
+                        <label for="two">Desc</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- PRODUCTS -->
+        <div class="container_cards">
+            <div class="cards">
+                <!-- Loop Start -->
+                <div class="card" v-for="(card, idx) in cards" :key="card.id">
+                    <div class="wrap">
+                        <div class="card-wrap">
+                            <a href=""><img class="card_img" :src="card.Image_URL" /></a>
+                        </div>
+                        <div class="loop-action">
+                            <a class="add-to-cart" @click="displayProductWindow(idx)">
+                                More Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Marlin Monro</h3>
+                    </div>
+                </div>
+                <!-- Loop End -->
+            </div>
+        </div>
+        <!-- END PRODUCTS/ -->
+    </div>
+</body>
+
+</html>
