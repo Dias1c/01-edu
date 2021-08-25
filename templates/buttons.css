@@ -1,0 +1,45 @@
+/* BUTTONS */
+
+button {
+    outline: none;
+    background: 0 0;
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 40px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.btn--small {
+    line-height: 30px;
+    padding: 0 15px;
+}
+
+.btn--gray {
+    background: #525252;
+}
+
+.btn--gray:hover {
+    background: #292929;
+}
+
+.btn--submit {
+    background: #c5245a;
+}
+
+.btn--submit:hover {
+    background: #961c45;
+}
