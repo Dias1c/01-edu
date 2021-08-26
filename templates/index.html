@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>🎵 groupie-tracker</title>
 </head>
 
 <body>
     <div class="header">
         <h2>groupie-tracker</h2>
-        <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank" class="textlink">Dias1c</a> | Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank" class="textlink">here</a></p>
+        <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank"
+                class="textlink text--white">Dias1c</a> |
+            Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank"
+                class="textlink text--white">here</a></p>
     </div>
     <div class="container container--divided">
         <!-- FILTER -->
@@ -42,8 +46,8 @@
                         <input class="checkbox_input" type="checkbox" :value="category.Name" :id="category.Name"
                             v-model="checkedCategories" checked="" />
                         <label class="checkbox_text" :for="category.Name">{{
-                      category.Name
-                    }}</label>
+                            category.Name
+                            }}</label>
                     </div>
                 </div>
                 <div class="input-group">
@@ -73,10 +77,11 @@
                 <div class="card" v-for="(card, idx) in cards" :key="card.id">
                     <div class="wrap">
                         <div class="card-wrap">
-                            <a href=""><img class="card_img" :src="card.Image_URL" /></a>
+                            <a href=""><img class="card_img"
+                                    src="https://www.sccnewsbyte.co.uk/wp-content/uploads/2020/08/securitythumbnail400x400.png" /></a>
                         </div>
                         <div class="loop-action">
-                            <a class="add-to-cart" @click="displayProductWindow(idx)">
+                            <a href="artist.html">
                                 More Details
                             </a>
                         </div>
@@ -89,6 +94,13 @@
             </div>
         </div>
         <!-- END PRODUCTS/ -->
+    </div>
+    <div class="footer">
+        <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank"
+                class="textlink text--white">Dias1c</a></p>
+        <p>
+            Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank"
+                class="textlink text--white">here</a></p>
     </div>
 </body>
 

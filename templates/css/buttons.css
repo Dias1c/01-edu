@@ -7,17 +7,21 @@ button {
 }
 
 .btn {
-    display: inline-block;
-    line-height: 40px;
-    padding: 0 40px;
+    display: block;
+    min-width: max-content;
+    height: max-content;
+    padding: 10px 40px;
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     cursor: pointer;
+    
+    text-align: center;
     font-size: 14px;
     text-decoration: none;
     color: #fff;
+    
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
