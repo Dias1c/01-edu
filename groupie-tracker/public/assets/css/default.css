@@ -27,7 +27,15 @@ hr {
 
 body {
     background: #000;
+    color: #fff;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-width: 300px;
+    /* padding: 10px; */
+
+}
+
+#page {
+    height: 100vh;
     padding: 10px;
+    overflow-y: auto;
 }
