@@ -1,0 +1,67 @@
+.block--horisontal__btns{
+    display: flex;
+    flex-direction: row;
+}
+
+.block--vertical__btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    /* background-color: #585858; */
+    /* color: #fff; */
+    background-color: #ffffff;
+    color: #202020;
+
+    border: none;
+    padding: 5px 6px;
+    margin: 5px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    font-size: 20px;
+}
+
+.btn:hover{
+    /* background-color: #474747; */
+    /* background-color: #dfdfdf; */
+    color: rgb(165, 14, 26);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 1px, rgba(0, 0, 0, 0.3) 0px 5px 11px -3px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+/*     
+    animation-name: loading;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+}
+
+
+.btn--selected{ 
+    background-color: rgb(165, 14, 26);
+    color:#fff;
+}
+
+.btn--selected:hover{ 
+    background-color: #ffffff;
+    color: #202020;
+}
+
+
+.btn:active{
+    background-color: rgb(107, 10, 18);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 0px 0px inset;
+}
+
+@keyframes loading {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
