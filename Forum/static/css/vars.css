@@ -1,0 +1,20 @@
+:root{
+    --primary-main: #3390ec;
+    --primary-composite: #83b1de;
+    --secondary-main:  #4FAE4E;
+    --secondary-composite:  #edffde;
+
+    --gray-700: #797579;
+    --gray-400: #bdb8b8;
+    --gray-100: #F4F4F5;
+
+    --background-main: #dce1e6;
+    --background-primary: #fff;
+    
+    --primary-font: #232629;
+    --secondary-font: #525960;
+    --link-font: var(--primary-main);
+
+    --page-width: 1280px;
+    --page-padding: 20px;
+}
