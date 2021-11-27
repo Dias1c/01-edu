@@ -6,6 +6,7 @@
 
     --gray-700: #797579;
     --gray-400: #bdb8b8;
+    --gray-300: #d3cfcf;
     --gray-100: #F4F4F5;
 
     --background-main: #dce1e6;
@@ -17,4 +18,5 @@
 
     --page-width: 1280px;
     --page-padding: 20px;
+    --border-radius: 3px;
 }
