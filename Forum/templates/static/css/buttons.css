@@ -1,18 +1,23 @@
 .btn{
+    position: relative;
     border: 1px solid var(--gray-400);
     border-radius: var(--border-radius);
+    margin-right: 5px;
 
     cursor: pointer;
 }
-.btn:hover{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0) 0px 0px 0.2px 0.5px inset;
+.btn:last-of-type {
+    margin-right: 0;
 }
-.btn:focus{
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
+}
+.btn:focus {
     border-color: var(--secondary-main);
     outline: 4px solid var(--secondary-composite);
 }
 .btn:active{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0.5) 0px 0px 0.2px 0.2px inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0.3) 0px 0px 0.5px 0.5px inset;
     outline: none;
 }
 
