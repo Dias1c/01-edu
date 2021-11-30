@@ -9,9 +9,9 @@
     /* max-width: calc(var(--page-width) - var(--page-padding) * 2); */
     max-width: var(--page-width);
     height: 50px;
-    background-color: var(--gray-100);
     padding: 0 10px;
     border-top: 3px solid var(--primary-main);
+    background-color: var(--gray-100);
     box-shadow: rgba(0, 0, 0, 1) 0px 2px 5px -5px;
 
     display: flex;
@@ -110,7 +110,9 @@
 }
 .header__search-input:focus{
     border-color: var(--secondary-main);
-    outline: 4px solid var(--secondary-composite);
+    /* outline: 4px solid var(--secondary-composite); */
+    outline: none;
+    box-shadow:  rgba(0, 0, 0, .05) 0 0 0px 4px, var(--secondary-composite) 0 0 0px 4px;
 }
 
 /* HEADER BUTTONS */

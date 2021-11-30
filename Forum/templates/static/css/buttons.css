@@ -10,11 +10,13 @@
     margin-right: 0;
 }
 .btn:hover{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset;
 }
 .btn:focus {
     border-color: var(--secondary-main);
-    outline: 4px solid var(--secondary-composite);
+    /* outline: 4px solid var(--secondary-composite); */
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset, rgba(0, 0, 0, .05) 0 0 0px 4px, var(--secondary-composite) 0 0 0px 4px;
 }
 .btn:active{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0.3) 0px 0px 0.5px 0.5px inset;
@@ -26,7 +28,7 @@
     padding: 5px;
 }
 .btn--normal{
-    padding: 7px 8px;
+    padding: 8px 10px;
 }
 
 .btn--secondary-v1{
@@ -38,4 +40,27 @@
     color: var(--secondary-main);
     background-color: var(--secondary-composite);
     border-color: var(--secondary-main);
+}
+
+/* TAGS */
+.btn-tag{
+    display: block;
+    width: max-content;
+    color: var(--secondary-main);
+    background-color: var(--secondary-composite);
+    border-radius: var(--border-radius);
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.btn-tag:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset;
+}
+.tag-line{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+
+    font-size: 11px;
 }
