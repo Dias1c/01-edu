@@ -50,17 +50,30 @@
     background-color: var(--secondary-composite);
     border-radius: var(--border-radius);
     padding: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 2px;
 }
 .btn-tag:hover{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 100px 100px inset;
 }
+.btn-tag:first-of-type{
+    margin-left: 0;
+}
+
 .tag-line{
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     width: 100%;
 
     font-size: 11px;
+    margin-bottom: 5px;
+}
+.tag-line:last-of-type{
+    margin-bottom: 0;
+}
+
+.tag-line > span{
+    margin-left: 5px;
+    color: var(--gray-700);
 }
