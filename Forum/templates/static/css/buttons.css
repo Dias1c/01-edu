@@ -1,6 +1,6 @@
 .btn{
     position: relative;
-    border: 1px solid var(--gray-400);
+    border: 1px solid var(--gray-300);
     border-radius: var(--border-radius);
     margin-right: 5px;
 
@@ -22,10 +22,19 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 100px 100px inset, rgba(0, 0, 0, 0.3) 0px 0px 0.5px 0.5px inset;
     outline: none;
 }
+.btn--selected{
+    cursor: default;
+    color: var(--secondary-composite);
+    border-color: var(--secondary-main);
+    background: var(--secondary-main);
+}
+.btn--selected:hover, .btn--selected:active{
+    box-shadow: none;
+}
 
 
 .btn--small{
-    padding: 5px;
+    padding: 5px 8px;
 }
 .btn--normal{
     padding: 8px 10px;

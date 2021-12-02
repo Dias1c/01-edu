@@ -1,170 +1,223 @@
-*,*::before,*::after{
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
     text-decoration: none;
     color: var(--primary-font);
 }
 
-body{
+body {
     background-color: var(--background-main);
 }
 
-.page{
+.page {
     position: relative;
-    
     max-width: var(--page-width);
     width: 100%;
-
     margin: 0 auto;
-
 }
 
-.container{
+.container {
     width: 100%;
 }
 
-.container__inner{
+.container__inner {
     position: relative;
     width: 100%;
     min-height: calc(100vh - 35px);
     flex: 1;
-    
     display: flex;
     flex-direction: row;
     background-color: var(--background-primary);
 }
 
 /* MAIN-SIDEBAR */
-.main-sidebar-container{
+
+.main-sidebar-container {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    
-    padding-top: var(--header-height); 
+    padding-top: var(--header-height);
     max-width: 190px;
     width: 100%;
     max-height: 100vh;
 }
 
-.main-sidebar{
+.main-sidebar {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     padding-top: var(--page-padding);
-
     width: 100%;
-
     display: flex;
     flex-direction: column;
 }
 
-.sidebar-nav-title{
+.sidebar-nav-title {
     padding: 16px 2px 4px 8px;
     color: var(--gray-400);
     text-transform: uppercase;
 }
 
-.sidebar-nav-link{
+.sidebar-nav-link {
     position: relative;
     width: 100%;
     padding: 8px;
-
     color: var(--secondary-font);
 }
-.sidebar-nav-link:hover{
+
+.sidebar-nav-link:hover {
     color: var(--primary-font);
 }
-.sidebar-nav-link[data-nav-selected]{
+
+.sidebar-nav-link[data-nav-selected] {
     color: var(--primary-font);
     font-weight: 700;
-
     border-right: 3px solid var(--primary-main);
     background-color: var(--gray-100);
 }
-.sub-nav-link{
+
+.sub-nav-link {
     padding-left: 30px;
 }
 
 /* CONTENT */
-.content{
+
+.content {
     flex: 1;
     border-left: 1px solid var(--gray-300);
     padding: calc(var(--header-height) + var(--page-padding)) 20px 20px 20px;
-
     display: flex;
     flex-direction: row;
-
 }
 
-.main-content{
-   flex: 1;
+.main-content {
+    flex: 1;
 }
-.content-intro{
+
+.content-intro {
     width: 100%;
     padding-bottom: 10px;
 }
-.content-intro-group{
-    width: 100%;
 
+.content-intro-group {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-
     margin-bottom: 5px;
 }
-.content-intro-group:last-of-type{
+
+.content-intro-group:last-of-type {
     margin-bottom: 0;
 }
 
-.main-title{
+.main-title {
     font-size: 27px;
     font-weight: 500;
     margin-bottom: 20px;
 }
-.main-text{
+
+.main-text {
     font-size: 16px;
     font-weight: 500;
 }
 
 /* CONTENT SIDEBAR */
-.content-sidebar{
+
+.content-sidebar {
     max-width: 300px;
     width: 100%;
     margin-left: var(--page-padding);
 }
 
-.content-sidebar-title{
+.content-sidebar-title {
     font-size: 19px;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
+/* PAGINATION */
+.paginaton-block{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
 /* FOOTER */
-.footer{
+
+.footer {
     background-color: var(--primary-font);
     padding: 10px;
     text-align: center;
 }
 
-.footer-text{
+.footer-text {
     /* font-size: 16px; */
     color: var(--background-main);
     margin-bottom: 5px;
 }
 
-.footer-text:last-child{
+.footer-text:last-child {
     margin-bottom: 0;
 }
 
-.footer-text-link{
+.footer-text-link {
     color: var(--background-primary);
 }
 
-.footer-text-link:hover{
+.footer-text-link:hover {
     text-decoration: underline;
+}
+
+/* DATA ATTR */
+[data-limit-lines-on]{
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+}
+/* 
+    SETS ... If Lines more 1 lines. 
+    IMPORTANT Works only with [data-text-limit]
+*/
+[data-limit-lines='1'] {
+    -ms-line-clamp: 1;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+[data-limit-lines='2'] {
+    -ms-line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+[data-limit-lines='3'] {
+    -ms-line-clamp: 3;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+[data-limit-lines="4"] {
+    -ms-line-clamp: 4;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+[data-limit-lines="5"] {
+    -ms-line-clamp: 5;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+}
+[data-limit-lines="6"] {
+    -ms-line-clamp: 6;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
 }
