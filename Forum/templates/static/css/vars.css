@@ -22,3 +22,12 @@
     --border-radius: 3px;
     --header-height: 53px;
 }
+
+
+/* 
+SM -  640 px
+MD -  720 px
+LG -  980 px
+XL - 1140 px
+*/
+/* data-is-here-when="sm md lg" */

@@ -27,7 +27,7 @@
             <a class="header-btn" href="#">About</a>
             <!-- header SEARCH -->
             <div class="header__search-block">
-                <p class="header__search-text">Looking Up?</p>
+                <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
                 <div class="header__search">
                     <img class="header__search-img" src="static/icons/search.svg" alt="icon">
                     <input class="header__search-input" type="text" placeholder="Search..." />
@@ -41,7 +41,7 @@
         </header>
         <!-- CONTENT -->
         <div class="container__inner">
-            <div class="main-sidebar-container">
+            <div class="main-sidebar-container" data-hide-on-sm>
                 <div class="main-sidebar">
                     <a class="sidebar-nav-link" href="#">Home</a>
                     <p class="sidebar-nav-title">Public</p>
@@ -70,22 +70,40 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">0</div>votes
+                                    <span class="question-stat-digit">0</span>votes
                                 </div>
                                 <div class="question-stat">
-                                    <div class="question-stat-digit"> 0</div>answers
+                                    <span class="question-stat-digit"> 0</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code if this element activated the other
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                    if this element activated the other
                                     element changes with html and css?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if it's possible to click on an element and
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
+                                    it's possible to click on an element and
                                     then change another element only using Html and CSS and if it is then how. some
-                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                    dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
+                                    veniam illo assumenda rem?</div>
+                                <div class="question-marks-block">
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="user-name" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">1 mins ago</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,19 +111,52 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">5</div>votes
+                                    <span class="question-stat-digit">-3</span>votes
                                 </div>
                                 <div class="question-stat question-stat-answered">
-                                    <div class="question-stat-digit">1</div>answers
+                                    <span class="question-stat-digit">1</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos vitae error nisi omnis doloribus exercitationem?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem tempora error enim, laborum commodi quos molestias quo id quas totam dicta sunt laudantium reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum corporis maxime.</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                    dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
+                                    cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
+                                    vitae error nisi omnis doloribus exercitationem?</a>
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem tempora
+                                    error enim, laborum commodi quos molestias quo id quas totam dicta sunt laudantium
+                                    reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
+                                    facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
+                                    corporis maxime.</div>
+                                <div class="question-marks-block">
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">php</a>
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">c#</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                        <a href="#" class="btn-tag">js</a>
+                                        <a href="#" class="btn-tag">javascript</a>
+                                        <a href="#" class="btn-tag">brainfuck</a>
+                                        <a href="#" class="btn-tag">python</a>
+                                        <a href="#" class="btn-tag">xml</a>
+                                        <a href="#" class="btn-tag">mariadb</a>
+                                        <a href="#" class="btn-tag">mssql</a>
+                                        <a href="#" class="btn-tag">mysql</a>
+                                        <a href="#" class="btn-tag">oracle</a>
+                                        <a href="#" class="btn-tag">p-sql</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="user-name" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">1 mins ago</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,19 +166,28 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">5</div>votes
+                                    <span class="question-stat-digit">5</span>votes
                                 </div>
                                 <div class="question-stat question-stat-answered-accepted">
-                                    <div class="question-stat-digit">1</div>answers
+                                    <span class="question-stat-digit">1</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos vitae error nisi omnis doloribus exercitationem?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem tempora error enim, laborum commodi quos molestias quo id quas totam dicta sunt laudantium reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum corporis maxime.</div>
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                    dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
+                                    cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
+                                    vitae error nisi omnis doloribus exercitationem?</a>
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem tempora
+                                    error enim, laborum commodi quos molestias quo id quas totam dicta sunt laudantium
+                                    reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
+                                    facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
+                                    corporis maxime.</div>
                                 <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                    <a href="#" class="btn-tag">education</a>
+                                    <a href="#" class="btn-tag">alem</a>
+                                    <a href="#" class="btn-tag">school</a>
                                 </div>
                             </div>
                         </div>
@@ -137,42 +197,23 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">0</div>votes
+                                    <span class="question-stat-digit">0</span>votes
                                 </div>
                                 <div class="question-stat">
-                                    <div class="question-stat-digit"> 0</div>answers
+                                    <span class="question-stat-digit"> 0</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code if this element activated the other
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                    if this element activated the other
                                     element changes with html and css?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if it's possible to click on an element and
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
+                                    it's possible to click on an element and
                                     then change another element only using Html and CSS and if it is then how. some
-                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- QUESTION POST -->
-                        <div class="question-post">
-                            <div class="question-stats">
-                                <div class="question-stat">
-                                    <div class="question-stat-digit">0</div>votes
-                                </div>
-                                <div class="question-stat">
-                                    <div class="question-stat-digit"> 0</div>answers
-                                </div>
-                            </div>
-                            <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code if this element activated the other
-                                    element changes with html and css?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if it's possible to click on an element and
-                                    then change another element only using Html and CSS and if it is then how. some
-                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse veniam illo assumenda rem?</div>
+                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                    dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
+                                    veniam illo assumenda rem?</div>
                                 <div class="question-tags">
                                     <a href="#" class="btn-tag">html</a>
                                     <a href="#" class="btn-tag">css</a>
@@ -185,18 +226,23 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">0</div>votes
+                                    <span class="question-stat-digit">0</span>votes
                                 </div>
                                 <div class="question-stat">
-                                    <div class="question-stat-digit"> 0</div>answers
+                                    <span class="question-stat-digit"> 0</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code if this element activated the other
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                    if this element activated the other
                                     element changes with html and css?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if it's possible to click on an element and
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
+                                    it's possible to click on an element and
                                     then change another element only using Html and CSS and if it is then how. some
-                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse veniam illo assumenda rem?</div>
+                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                    dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
+                                    veniam illo assumenda rem?</div>
                                 <div class="question-tags">
                                     <a href="#" class="btn-tag">html</a>
                                     <a href="#" class="btn-tag">css</a>
@@ -209,18 +255,52 @@
                         <div class="question-post">
                             <div class="question-stats">
                                 <div class="question-stat">
-                                    <div class="question-stat-digit">0</div>votes
+                                    <span class="question-stat-digit">0</span>votes
                                 </div>
                                 <div class="question-stat">
-                                    <div class="question-stat-digit"> 0</div>answers
+                                    <span class="question-stat-digit"> 0</span>answers
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code if this element activated the other
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                    if this element activated the other
                                     element changes with html and css?</a>
-                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if it's possible to click on an element and
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
+                                    it's possible to click on an element and
                                     then change another element only using Html and CSS and if it is then how. some
-                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse veniam illo assumenda rem?</div>
+                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                    dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
+                                    veniam illo assumenda rem?</div>
+                                <div class="question-tags">
+                                    <a href="#" class="btn-tag">html</a>
+                                    <a href="#" class="btn-tag">css</a>
+                                    <a href="#" class="btn-tag">golang</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QUESTION POST -->
+                        <div class="question-post">
+                            <div class="question-stats">
+                                <div class="question-stat">
+                                    <span class="question-stat-digit">0</span>votes
+                                </div>
+                                <div class="question-stat">
+                                    <span class="question-stat-digit"> 0</span>answers
+                                </div>
+                            </div>
+                            <div class="question-summary">
+                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                    if this element activated the other
+                                    element changes with html and css?</a>
+                                <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
+                                    it's possible to click on an element and
+                                    then change another element only using Html and CSS and if it is then how. some
+                                    thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                    dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
+                                    veniam illo assumenda rem?</div>
                                 <div class="question-tags">
                                     <a href="#" class="btn-tag">html</a>
                                     <a href="#" class="btn-tag">css</a>
@@ -229,13 +309,19 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- PAGINATION -->
                     <div class="paginaton-block">
                         <div class="btn btn--small">prev</div>
-                        <div class="btn btn--small btn--selected">1</div>
-                        <div class="btn btn--small">2</div>
+                        <div class="btn btn--small">1</div>
+                        <div class="pagination-dots">...</div>
                         <div class="btn btn--small">3</div>
                         <div class="btn btn--small">4</div>
-                        <div class="btn btn--small">5</div>
+                        <div class="btn btn--small btn--selected">5</div>
+                        <div class="btn btn--small">6</div>
+                        <div class="btn btn--small">7</div>
+                        <div class="pagination-dots">...</div>
+                        <div class="btn btn--small">2021</div>
                         <div class="btn btn--small">next</div>
                     </div>
                 </div>
@@ -251,7 +337,10 @@
         </div>
         <!-- FOOTER -->
         <div class="container footer">
-            <p class="footer-text">2021 | by <a class="footer-text-link" target="_blank" href="https://github.com/Dias1c">Dias1c</a> & <a class="footer-text-link" target="_blank" href="https://github.com/RaevNur">nrblzn</a> |  Project <a class="footer-text-link" target="_blank" href="#">here</a></p>
+            <p class="footer-text">2021 | by <a class="footer-text-link" target="_blank"
+                    href="https://github.com/Dias1c">Dias1c</a> & <a class="footer-text-link" target="_blank"
+                    href="https://github.com/RaevNur">nrblzn</a> | Project <a class="footer-text-link" target="_blank"
+                    href="#">here</a></p>
         </div>
     </div>
 </body>

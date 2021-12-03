@@ -55,6 +55,7 @@
 .btn-tag{
     display: block;
     width: max-content;
+    height: max-content;
     color: var(--secondary-main);
     background-color: var(--secondary-composite);
     border-radius: var(--border-radius);
