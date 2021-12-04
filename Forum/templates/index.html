@@ -26,13 +26,29 @@
             <a class="logo-btn" href="#"><img src="static/icons/forum.svg" class="logo-btn-img" /> Forum</a>
             <a class="header-btn" href="#">About</a>
             <!-- header SEARCH -->
-            <div class="header__search-block">
+            <label type="checkbox" class="search-btn" data-show-on-md>
+                <input type="checkbox"/>
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                  </svg>
+                </label>
+            <form class="header__search-block" >
+                    <!-- data-hide-on-md -->
                 <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
                 <div class="header__search">
-                    <img class="header__search-img" src="static/icons/search.svg" alt="icon">
+                        <svg class="header__search-img" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="10" cy="10" r="7" />
+                            <line x1="21" y1="21" x2="15" y2="15" />
+                          </svg>
+                    <!-- <img class="" src="static/icons/search.svg" alt="icon"> -->
                     <input class="header__search-input" type="text" placeholder="Search..." />
                 </div>
-            </div>
+            </form>
+            <!-- TODO SEARCH -->
+            
             <!-- header BTNS -->
             <div class="header__auth-btns">
                 <button class="btn btn--normal btn--secondary-v2">Log in</button>
@@ -77,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -99,7 +115,7 @@
                                                 alt="user-avatar">
                                         </a>
                                         <div class="user-details">
-                                            <a class="user-name" href="#user-href">Dias Kappassov</a>
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
                                             <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
                                                     class="relativetime">1 mins ago</span></div>
                                         </div>
@@ -118,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
                                     dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
                                     cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
                                     vitae error nisi omnis doloribus exercitationem?</a>
@@ -152,9 +168,9 @@
                                                 alt="user-avatar">
                                         </a>
                                         <div class="user-details">
-                                            <a class="user-name" href="#user-href">Dias Kappassov</a>
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
                                             <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
-                                                    class="relativetime">1 mins ago</span></div>
+                                                    class="relativetime">3 mins ago</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
                                     dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
                                     cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
                                     vitae error nisi omnis doloribus exercitationem?</a>
@@ -184,10 +200,23 @@
                                     adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
                                     facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
                                     corporis maxime.</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">education</a>
-                                    <a href="#" class="btn-tag">alem</a>
-                                    <a href="#" class="btn-tag">school</a>
+                                <div class="question-marks-block">
+
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">education</a>
+                                        <a href="#" class="btn-tag">alem</a>
+                                        <a href="#" class="btn-tag">school</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">56 mins ago</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +233,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -214,10 +243,23 @@
                                     consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
                                     dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
                                     veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                <div class="question-marks-block">
+
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">6 hours ago</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +275,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -243,10 +285,23 @@
                                     consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
                                     dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
                                     veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                <div class="question-marks-block">
+
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">1 month ago</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +317,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -272,10 +327,23 @@
                                     consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
                                     dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
                                     veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                <div class="question-marks-block">
+
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">2021.12.03 20:20:52</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -291,7 +359,7 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -301,10 +369,23 @@
                                     consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
                                     dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id esse
                                     veniam illo assumenda rem?</div>
-                                <div class="question-tags">
-                                    <a href="#" class="btn-tag">html</a>
-                                    <a href="#" class="btn-tag">css</a>
-                                    <a href="#" class="btn-tag">golang</a>
+                                <div class="question-marks-block">
+
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">2021.12.03</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -326,12 +407,21 @@
                     </div>
                 </div>
                 <div class="content-sidebar">
-                    <h4 class="content-sidebar-title">Related Tags</h4>
-                    <div class="tag-line"><a href="#" class="btn-tag">html</a><span>× 51</span></div>
-                    <div class="tag-line"><a href="#" class="btn-tag">css</a><span>× 50</span></div>
-                    <div class="tag-line"><a href="#" class="btn-tag">golang</a><span>× 30</span></div>
-                    <div class="tag-line"><a href="#" class="btn-tag">c#</a><span>× 19</span></div>
-                    <div class="tag-line"><a href="#" class="btn-tag">alem</a><span>× 1</span></div>
+                    <div class="content-sidebar-subblock">
+                        <h4 class="content-sidebar-title">Related Tags</h4>
+                        <div class="tag-line"><a href="#" class="btn-tag">html</a><span>× 51</span></div>
+                        <div class="tag-line"><a href="#" class="btn-tag">css</a><span>× 50</span></div>
+                        <div class="tag-line"><a href="#" class="btn-tag">golang</a><span>× 30</span></div>
+                        <div class="tag-line"><a href="#" class="btn-tag">c#</a><span>× 19</span></div>
+                        <div class="tag-line"><a href="#" class="btn-tag">alem</a><span>× 1</span></div>
+                    </div>
+                    <div class="content-sidebar-subblock">
+                        <h4 class="content-sidebar-title">Hot Questions</h4>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus consequatur consectetur error hic in, officia tempore placeat magnam perspiciatis aut vitae animi nihil, harum omnis iure explicabo facere voluptates.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Repellat, libero accusantium veniam incidunt corporis laudantium nostrum tempora fugiat sequi unde aliquam delectus ducimus nobis voluptate sed excepturi quaerat neque. Nemo.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quia porro. Praesentium odio unde officia odit incidunt voluptate in totam. Nemo officia facere tempore quidem, voluptatibus unde voluptate cupiditate? Consequatur.</a>
+                    </div>
                 </div>
             </div>
         </div>
