@@ -224,6 +224,12 @@ body {
 .mb-rem-half{
     margin-bottom: 0.5rem;
 }
+.fnt-primary{
+    color: var(--primary-font);
+}
+.fnt-gray{
+    color: var(--gray-500);
+}
 
 /* DATA ATTR */
 
@@ -283,6 +289,12 @@ body {
 /* Hide */
 
 @media(max-width:1140px) {
+    .dflex-on-xl{
+        display: flex !important;
+    }
+    .dnone-on-xl{
+        display: none !important;
+    }
     [data-hide-on-xl] {
         display: none !important;
     }
@@ -292,6 +304,12 @@ body {
 }
 
 @media(max-width: 980px) {
+    .dflex-on-lg{
+        display: flex !important;
+    }
+    .dnone-on-lg{
+        display: none !important;
+    }
     [data-hide-on-lg] {
         display: none !important;
     }
@@ -301,6 +319,12 @@ body {
 }
 
 @media(max-width: 720px) {
+    .dflex-on-md{
+        display: flex !important;
+    }
+    .dnone-on-md{
+        display: none !important;
+    }
     [data-hide-on-md] {
         display: none !important;
     }
@@ -310,6 +334,12 @@ body {
 }
 
 @media(max-width: 640px) {
+    .dflex-on-sm{
+        display: flex !important;
+    }
+    .dnone-on-sm{
+        display: none !important;
+    }
     [data-hide-on-sm] {
         display: none !important;
     }

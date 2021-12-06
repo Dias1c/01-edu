@@ -88,16 +88,19 @@
 }
 .header__search-img{
     position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    
     height: 70%;
     width: auto;
     pointer-events: none;
-
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%)
+    
 }
 
 .header__search-input{
+    position: relative;
     height: 100%;
     width: 100%;
 
@@ -113,6 +116,63 @@
     border-color: var(--secondary-main);
     outline: none;
     box-shadow:  rgba(0, 0, 0, .05) 0 0 0px 4px, var(--secondary-composite) 0 0 0px 4px;
+}
+/* SEARCH TOOLTIP */
+.header__search-hint{
+    display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+    padding: 10px;
+    background: var(--background-primary);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.header__search-hint::before{
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6.5px 8px 6.5px;
+    border-color: transparent transparent var(--gray-300) transparent;
+}
+.header__search-hint::after{
+    content: "";
+    position: absolute;
+    top: -6.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6.5px 8px 6.5px;
+    border-color: transparent transparent var(--background-primary)  transparent;
+}
+
+.header__search-input:focus ~ .header__search-hint{
+    display: flex;
+}
+.header__search-hint-text{
+    line-height: 1.5rem;
+    color: var(--gray-500);
+    width: 50%;
+}
+.header__search-hint-text-title{
+    color: var(--primary-font);
 }
 
 .search-btn{
@@ -130,6 +190,14 @@
 
     cursor: pointer;
 }
+.search-btn--checked{
+    color: inherit;
+    background: var(--gray-300);
+}
+.search-btn--checked > svg{
+    stroke: var(--gray-500);
+}
+
 .search-btn input{
     display: none;
 }
@@ -158,13 +226,13 @@
 
 
 @media(max-width: 720px) {
-    
+
     .header__search-block{
         position: absolute;
         top: 100%;
         left: 0;
         display: none;
-        padding: 8px 12px;
+        padding: 9px 12px;
         background-color: var(--gray-300);
 
         width: 100%;
@@ -173,7 +241,12 @@
     .search-btn .header__search-block{
         display: block;
     }
-    /* .search-btn:active ~ .header__search-block{
-        display: block;
-    } */
+}
+
+
+
+@media(max-width: 480px) {
+    .header__search-hint-text{
+        width: 100%;
+    }
 }

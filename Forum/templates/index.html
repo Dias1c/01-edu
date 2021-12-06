@@ -26,29 +26,55 @@
             <a class="logo-btn" href="#"><img src="static/icons/forum.svg" class="logo-btn-img" /> Forum</a>
             <a class="header-btn" href="#">About</a>
             <!-- header SEARCH -->
-            <label type="checkbox" class="search-btn" data-show-on-md>
-                <input type="checkbox"/>
-                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <label type="checkbox" class="search-btn" id="cb_search" data-show-on-md>
+                <input type="checkbox" />
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <circle cx="10" cy="10" r="7" />
                     <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </label>
-            <form class="header__search-block" >
-                    <!-- data-hide-on-md -->
+                </svg>
+            </label>
+            <form class="header__search-block" id="b_search">
                 <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
                 <div class="header__search">
-                        <svg class="header__search-img" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="10" cy="10" r="7" />
-                            <line x1="21" y1="21" x2="15" y2="15" />
-                          </svg>
-                    <!-- <img class="" src="static/icons/search.svg" alt="icon"> -->
+                    <svg class="header__search-img" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
                     <input class="header__search-input" type="text" placeholder="Search..." />
+
+                    <!-- TOOLTIP -->
+                    <div class="header__search-hint">
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">[tag]</span>
+                            <span>search within a tag</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">answers:0</span>
+                            <span>unanswered questions</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">"has words"</span>
+                            <span>exact phrase</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">score:2</span>
+                            <span>posts with a 2+ score</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">user:id</span>
+                            <span>search by author</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">isaccepted:yes</span>
+                            <span>search within status</span>
+                        </div>
+                    </div>
                 </div>
             </form>
-            <!-- TODO SEARCH -->
-            
             <!-- header BTNS -->
             <div class="header__auth-btns">
                 <button class="btn btn--normal btn--secondary-v2">Log in</button>
@@ -93,7 +119,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -134,7 +161,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>Lorem ipsum
                                     dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
                                     cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
                                     vitae error nisi omnis doloribus exercitationem?</a>
@@ -189,7 +217,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>Lorem ipsum
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>Lorem ipsum
                                     dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos tempore
                                     cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio eos
                                     vitae error nisi omnis doloribus exercitationem?</a>
@@ -233,7 +262,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -275,7 +305,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -317,7 +348,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -359,7 +391,8 @@
                                 </div>
                             </div>
                             <div class="question-summary">
-                                <a href="#" class="question-title linked-text" data-limit-lines-on data-limit-lines='2'>how to code
+                                <a href="#" class="question-title linked-text" data-limit-lines-on
+                                    data-limit-lines='2'>how to code
                                     if this element activated the other
                                     element changes with html and css?</a>
                                 <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know if
@@ -417,10 +450,20 @@
                     </div>
                     <div class="content-sidebar-subblock">
                         <h4 class="content-sidebar-title">Hot Questions</h4>
-                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus consequatur consectetur error hic in, officia tempore placeat magnam perspiciatis aut vitae animi nihil, harum omnis iure explicabo facere voluptates.</a>
-                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Repellat, libero accusantium veniam incidunt corporis laudantium nostrum tempora fugiat sequi unde aliquam delectus ducimus nobis voluptate sed excepturi quaerat neque. Nemo.</a>
-                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quia porro. Praesentium odio unde officia odit incidunt voluptate in totam. Nemo officia facere tempore quidem, voluptatibus unde voluptate cupiditate? Consequatur.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem
+                            ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem
+                            ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus consequatur
+                            consectetur error hic in, officia tempore placeat magnam perspiciatis aut vitae animi nihil,
+                            harum omnis iure explicabo facere voluptates.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                            data-limit-lines="2">Repellat, libero accusantium veniam incidunt corporis laudantium
+                            nostrum tempora fugiat sequi unde aliquam delectus ducimus nobis voluptate sed excepturi
+                            quaerat neque. Nemo.</a>
+                        <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on data-limit-lines="2">Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit. At, quia porro. Praesentium odio unde
+                            officia odit incidunt voluptate in totam. Nemo officia facere tempore quidem, voluptatibus
+                            unde voluptate cupiditate? Consequatur.</a>
                     </div>
                 </div>
             </div>
@@ -433,6 +476,9 @@
                     href="#">here</a></p>
         </div>
     </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
 </body>
 
 </html>
