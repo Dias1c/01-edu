@@ -1,17 +1,36 @@
 // Widgets like Search
-var cb_Search = document.getElementById("cb_search");
-var b_Search = document.getElementById("b_search");
 
-// cb_Search_change - Shows or hide element
-function cb_Search_change(e) {
+// HEADER SEARCH
+var cb_HeaderSearch = document.getElementById("cb_HeaderSearch");
+var b_HeaderSearch = document.getElementById("b_HeaderSearch");
+
+// HEADER MENU
+var cb_HeaderMenu = document.getElementById("cb_HeaderMenu");
+var b_HeaderMenu = document.getElementById("b_HeaderMenu");
+
+
+// cb_HeaderSearch_change - Shows or hide element
+function cb_HeaderSearch_change(e) {
     if (e.target.checked) {
-        b_Search.classList.add("dflex-on-md");
-        cb_Search.classList.add("search-btn--checked");
+        b_HeaderSearch.classList.add("dflex-on-md");
+        cb_HeaderSearch.classList.add("btn-tg--checked");
     } else {
-        b_Search.classList.remove("dflex-on-md");
-        cb_Search.classList.remove("search-btn--checked");
+        b_HeaderSearch.classList.remove("dflex-on-md");
+        cb_HeaderSearch.classList.remove("btn-tg--checked");
+    }
+}
+
+// cb_HeaderSearch_change - Shows or hide element
+function cb_HeaderMenu_change(e) {
+    if (e.target.checked) {
+        b_HeaderMenu.classList.add("dflex-on-sm");
+        cb_HeaderMenu.classList.add("header__menu-btn--checked");
+    } else {
+        b_HeaderMenu.classList.remove("dflex-on-sm");
+        cb_HeaderMenu.classList.remove("header__menu-btn--checked");
     }
 }
 
 // ADDING EVENTS
-cb_Search.addEventListener("change", cb_Search_change);
+cb_HeaderSearch.addEventListener("change", cb_HeaderSearch_change);
+cb_HeaderMenu.addEventListener("change", cb_HeaderMenu_change);

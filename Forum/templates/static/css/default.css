@@ -60,7 +60,7 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    padding-top: var(--page-padding);
+    padding: var(--page-padding) 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -216,6 +216,12 @@ body {
     }
 }
 
+@media(max-width:640px){
+    .content{
+        border-left: none;
+    }
+}
+
 /* BOOSTSRAP */
 .w-100{
     display: block;
@@ -229,6 +235,9 @@ body {
 }
 .fnt-gray{
     color: var(--gray-500);
+}
+.text-no-wrap{
+    white-space: nowrap;
 }
 
 /* DATA ATTR */

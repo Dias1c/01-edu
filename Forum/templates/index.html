@@ -20,26 +20,48 @@
 
 <body>
     <div class="page">
-
         <!-- HEADER -->
         <header class="container header">
-            <a class="logo-btn" href="#"><img src="static/icons/forum.svg" class="logo-btn-img" /> Forum</a>
+            <label class="header__menu-btn" id="cb_HeaderMenu">
+                <input type="checkbox" />
+                <span></span>
+            </label>
+            <div class="header__menu-block" id="b_HeaderMenu">
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="#">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" data-nav-selected href="#">Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="#">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="#">Users</a>
+                </div>
+            </div>
+
+            <a class="header__logo-btn" href="/">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                    <circle cx="12" cy="12" r="7" />
+                </svg>
+                <h2 class="header__logo-btn-text">Forum</h2>
+            </a>
             <a class="header-btn" href="#">About</a>
             <!-- header SEARCH -->
-            <label type="checkbox" class="search-btn" id="cb_search" data-show-on-md>
+            <label type="checkbox" class="search-btn" id="cb_HeaderSearch" data-show-on-sm>
                 <input type="checkbox" />
-                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#bdb8b8" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <circle cx="10" cy="10" r="7" />
                     <line x1="21" y1="21" x2="15" y2="15" />
                 </svg>
             </label>
-            <form class="header__search-block" id="b_search">
+            <form class="header__search-block" id="b_HeaderSearch">
                 <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
                 <div class="header__search">
-                    <svg class="header__search-img" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5"
-                        stroke="#d3cfcf" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <circle cx="10" cy="10" r="7" />
                         <line x1="21" y1="21" x2="15" y2="15" />
@@ -77,8 +99,8 @@
             </form>
             <!-- header BTNS -->
             <div class="header__auth-btns">
-                <button class="btn btn--normal btn--secondary-v2">Log in</button>
-                <button class="btn btn--normal btn--secondary-v1">Sign up</button>
+                <button class="btn btn--normal btn--secondary-v2 text-no-wrap">Log in</button>
+                <button class="btn btn--normal btn--secondary-v1 text-no-wrap">Sign up</button>
             </div>
         </header>
         <!-- CONTENT -->
