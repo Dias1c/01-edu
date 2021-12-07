@@ -316,12 +316,6 @@
     .search-btn .header__search-block{
         display: block;
     }
-}
-
-@media(max-width: 640px) {
-    .header__menu-btn{
-        display: flex;
-    }
 
     .header__search-block{
         position: absolute;
@@ -335,6 +329,13 @@
         width: 100%;
         margin: 0px;
     }
+}
+
+@media(max-width: 640px) {
+    .header__menu-btn{
+        display: flex;
+    }
+
     
     .header__logo-btn{
         width: auto;
