@@ -37,8 +37,7 @@
             </div>
 
             <a class="header__logo-btn" href="/">
-                <svg viewBox="0 0 24 24" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
                         d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
@@ -125,9 +124,29 @@
                             <p class="main-text">10,000,000 questions</p>
                             <div class="content-filter-block">
                                 <div class="content-filter"></div>
-                                <button class="btn btn--normal btn--secondary-v2">Filter</button>
+                                <button class="btn btn--normal btn--secondary-v2" id="cb_Filter">Filter</button>
                             </div>
                         </div>
+                        <form class="question-filter-block" action="/question" method="GET" id="b_Filter">
+                            <div class="question-filter-sublock">
+                                <div class="question-filter-title">Filter By</div>
+                                <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAnswered">Not answered</label>
+                                <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAcceptedAnswered">Not accepted answer</label>
+                            </div>
+                            <div class="question-filter-sublock">
+                                <div class="question-filter-title">Sort By</div>
+                                <label class="question-filter-label"><input type="radio" name="sort" value="Newest">Newest</label>
+                                <label class="question-filter-label"><input type="radio" name="sort" value="Votes">Most Votes</label>
+                                <label class="question-filter-label"><input type="radio" name="sort" value="Votes">Most Answers</label>
+                            </div>
+                            <div class="question-filter-sublock">
+                                <div class="question-filter-title">Tagged With</div>
+                                <input type="text" class="question-filter-textarea" name="tags"></input>
+                            </div>
+                            <div class="question-filter-footer">
+                                <button class="btn btn--normal btn--secondary-v1">Apply Filter</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="questions">
                         <!-- QUESTION POST -->
