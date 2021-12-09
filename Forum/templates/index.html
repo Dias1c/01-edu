@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/questions.css">
+
+    <!-- jquery TAGS -->
+    <link rel="stylesheet" href="static/css/jquery.tag-editor.css">
 </head>
 
 <body>
@@ -124,24 +127,54 @@
                             <p class="main-text">10,000,000 questions</p>
                             <div class="content-filter-block">
                                 <div class="content-filter"></div>
-                                <button class="btn btn--normal btn--secondary-v2" id="cb_Filter">Filter</button>
+                                <label class="btn btn--normal btn--secondary-v2 cb_QuestionsFilter"
+                                    id="cb_QuestionsFilter"> <input type="checkbox"> Filter</label>
                             </div>
                         </div>
-                        <form class="question-filter-block" action="/question" method="GET" id="b_Filter">
+                        <form class="question-filter-block" action="/question" method="GET" id="b_QuestionsFilter">
                             <div class="question-filter-sublock">
                                 <div class="question-filter-title">Filter By</div>
-                                <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAnswered">Not answered</label>
-                                <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAcceptedAnswered">Not accepted answer</label>
+                                <!-- <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAnswered">Not answered</label>
+                                <label class="question-filter-label"><input type="checkbox" name="filter" value="NotAcceptedAnswered">Not accepted answer</label> -->
+                                <div class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="filter" value="NotAnswered"
+                                        id="cb_NotAnswered"></input>
+                                    <label class="checkbox__label" for="cb_NotAnswered">Not answered</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="filter"
+                                        value="NotAcceptedAnswered" id="cb_NotAcceptedAnswered"></input>
+                                    <label class="checkbox__label" for="cb_NotAcceptedAnswered">Not accepted
+                                        answer</label>
+                                </div>
                             </div>
                             <div class="question-filter-sublock">
                                 <div class="question-filter-title">Sort By</div>
-                                <label class="question-filter-label"><input type="radio" name="sort" value="Newest">Newest</label>
+                                <!-- <label class="question-filter-label"><input type="radio" name="sort" value="Date">Newest</label>
                                 <label class="question-filter-label"><input type="radio" name="sort" value="Votes">Most Votes</label>
-                                <label class="question-filter-label"><input type="radio" name="sort" value="Votes">Most Answers</label>
+                                <label class="question-filter-label"><input type="radio" name="sort" value="Answers">Most Answers</label> -->
+
+                                <!-- My Style -->
+                                <div class="radio">
+                                    <input class="radio__input" type="radio" name="sort" value="Data"
+                                        id="rb_Data"></input>
+                                    <label class="radio__label" for="rb_Data">Newest</label>
+                                </div>
+                                <div class="radio">
+                                    <input class="radio__input" type="radio" name="sort" value="Votes"
+                                        id="rb_Votes"></input>
+                                    <label class="radio__label" for="rb_Votes">Most Votes</label>
+                                </div>
+                                <div class="radio">
+                                    <input class="radio__input" type="radio" name="sort" value="Answers"
+                                        id="rb_Answers"></input>
+                                    <label class="radio__label" for="rb_Answers">Not answered</label>
+                                </div>
+
                             </div>
                             <div class="question-filter-sublock">
                                 <div class="question-filter-title">Tagged With</div>
-                                <input type="text" class="question-filter-textarea" name="tags"></input>
+                                <textarea class="question-filter-textarea" name="tags" id="tb_QuestionsTags"></textarea>
                             </div>
                             <div class="question-filter-footer">
                                 <button class="btn btn--normal btn--secondary-v1">Apply Filter</button>
@@ -520,6 +553,22 @@
 
     <!-- JS -->
     <script src="static/js/header.js"></script>
+    <script src="static/js/questions.js"></script>
+
+    <!-- TAG EDITOR -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+    <script src="static/js/jquery.caret.min.js"></script>
+    <script src="static/js/jquery.tag-editor.min.js"></script>
+    <script>
+        $('#tb_QuestionsTags').tagEditor({
+            delimiter: ', ',
+            maxTags: 10,
+            // removeDuplicates: false,
+            // sortable: false,
+            placeholder: 'Enter tags ...'
+        }).css('display', 'block').attr('readonly', true);
+    </script>
 </body>
 
 </html>

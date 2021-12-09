@@ -36,4 +36,4 @@ cb_HeaderSearch.addEventListener("change", cb_HeaderSearch_change);
 cb_HeaderMenu.addEventListener("change", cb_HeaderMenu_change);
 
 // TODO: Кнопки Tabulation active будут через template
-console.info(window.location.href);
+// console.info(window.location.href);

@@ -4,18 +4,36 @@
 }
 
 .question-filter-block{
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
 
     max-width: 100%;
     width: 100%;
+    height: max-content;
     background: var(--gray-100);
     border: 1px solid var(--gray-300);
     border-radius: var(--border-radius);
     margin-top: 10px;
+
+    animation-duration: .5s;
+    animation-name: b-filter-show;
+    animation-iteration-count: 1;
 }
 
+@keyframes b-filter-show{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.cb_QuestionsFilter > input{
+    display: none;
+    position: absolute;
+}
 .question-filter-sublock{
     display: flex;
     flex-direction: column;
