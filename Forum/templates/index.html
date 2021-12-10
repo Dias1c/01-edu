@@ -12,13 +12,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="static/css/vars.css">
     <link rel="stylesheet" href="static/css/default.css">
-    <link rel="stylesheet" href="static/css/buttons.css">
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/questions.css">
-
-    <!-- jquery TAGS -->
-    <link rel="stylesheet" href="static/css/jquery.tag-editor.css">
 </head>
 
 <body>
@@ -174,7 +170,11 @@
                             </div>
                             <div class="question-filter-sublock">
                                 <div class="question-filter-title">Tagged With</div>
-                                <textarea class="question-filter-textarea" name="tags" id="tb_QuestionsTags"></textarea>
+                                <!-- <textarea class="question-filter-textarea" name="tags" id="tb_QuestionsTags"></textarea> -->
+                                <input type="text" name="tags" id="tb_Tags" style="display: none;">
+                                <div class="textblock__input" id="b_TagEditor">
+
+                                </div>
                             </div>
                             <div class="question-filter-footer">
                                 <button class="btn btn--normal btn--secondary-v1">Apply Filter</button>
@@ -554,20 +554,9 @@
     <!-- JS -->
     <script src="static/js/header.js"></script>
     <script src="static/js/questions.js"></script>
-
-    <!-- TAG EDITOR -->
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
-    <script src="static/js/jquery.caret.min.js"></script>
-    <script src="static/js/jquery.tag-editor.min.js"></script>
+    <script src="static/js/default.js"></script>
     <script>
-        $('#tb_QuestionsTags').tagEditor({
-            delimiter: ', ',
-            maxTags: 10,
-            // removeDuplicates: false,
-            // sortable: false,
-            placeholder: 'Enter tags ...'
-        }).css('display', 'block').attr('readonly', true);
+        const tagEditor = new TagEditor({ BlockSelectorName: "#b_TagEditor", TextBlockSelectorName: "#tb_Tags" });
     </script>
 </body>
 
