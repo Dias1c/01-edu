@@ -26,10 +26,12 @@ SM -  640 px
     --link-font: var(--primary-main);
 
     --page-width: 1280px;
+    --page-min-width: 320px;
     --page-padding: 20px;
     --border-radius: 3px;
     --header-height: 53px;
 }
+
 
 /* DEFAULT STYLE SETTINGS */
 *, *::before, *::after {
@@ -49,6 +51,7 @@ span {
 
 body {
     background-color: var(--background-main);
+    min-width: var(--page-min-width);
 }
 /* BUTTONS */
 .btn{

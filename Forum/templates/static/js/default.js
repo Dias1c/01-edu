@@ -48,11 +48,9 @@ class TagEditor {
         this.Tb_Input.addEventListener('keydown', (e) => {
             if (e.key === ' ' || e.key === 'Enter') {
                 let tagname = this.Tb_Input.value;
-                console.log(`TagName: "${tagname}"`)
                 this.AddTag(tagname);
                 this.Tb_Input.value = '';
             } else if (e.key === 'Backspace' && this.Tb_Input.value == "") {
-                console.log('Remove Tag');
                 let tagname = this.RemoveLastTag();
                 this.Tb_Input.value = tagname + " ";
             }
@@ -79,10 +77,8 @@ class TagEditor {
         if (name == "") {
             return false
         } else if (this.SMaxTags != 0 && this.STags.length >= this.SMaxTags) {
-            console.log("SMaxTags", name);
             return false
         } else if (!this.SHasDoubles && this.STags.includes(name)) {
-            console.log("SHasDoubles", name);
             return false
         }
         return true
