@@ -1,4 +1,4 @@
-// TAG EDITOR
+// TagEditor - Tag Editor Util
 class TagEditor {
     // ! HTML Elements
     B_TagEditor; // new HTMLDivElement();
@@ -6,28 +6,29 @@ class TagEditor {
     Tb_Tags; // new HTMLInputElement();
 
     // ! SETTIGNS Default
-    SB_sName = '#b_TagEditor';      // visible TagEditor block SelectorName
-    STb_sName = '#tb_TagEditor';    // input SelectorName
-    SHasDoubles = false;            // AddDoubles?
-    SToLower = true;                // ToLowercase Tag?
-    SMaxTags = 0;                   // Max Tags Count, 0 == Unlimited
-    STags = [];                     // Writed Tags
+    SBlockSelectorName = '#b_TagEditor';            // visible TagEditor block SelectorName
+    STextBlockSelectorName = '#tb_TagEditor';       // input SelectorName
+    SHasDoubles = false;                            // AddDoubles?
+    SToLower = true;                                // ToLowercase Tag?
+    SMaxTags = 0;                                   // Max Tags Count, 0 == Unlimited
+    STags = [];                                     // Writed Tags
+    SSeparator = ' ';                               // Split by
 
     // Inits TagEditor By Settings
     constructor(settings) {
         // Set Settings
         this.init_Settings(settings);
         // Init Inputs and Blocks on html
-        this.B_TagEditor = document.querySelector(this.SB_sName);
-        this.Tb_Tags = document.querySelector(this.STb_sName);
+        this.B_TagEditor = document.querySelector(this.SBlockSelectorName);
+        this.Tb_Tags = document.querySelector(this.STextBlockSelectorName);
         this.init_Tb_Input();
         // Set Tags On input and STags
         this.RefreshTags();
     }
     // Set Default Settings by Settings
     init_Settings(settings) {
-        this.SB_sName = (settings.BlockSelectorName) ? settings.BlockSelectorName : this.SB_sName;
-        this.STb_sName = (settings.TextBlockSelectorName) ? settings.TextBlockSelectorName : this.STb_sName;
+        this.SBlockSelectorName = (settings.BlockSelectorName) ? settings.BlockSelectorName : this.SBlockSelectorName;
+        this.STextBlockSelectorName = (settings.TextBlockSelectorName) ? settings.TextBlockSelectorName : this.STextBlockSelectorName;
         this.SHasDoubles = (settings.HasDoubles) ? settings.HasDoubles : this.SHasDoubles;
         this.SToLower = (settings.ToLower) ? settings.ToLower : this.SToLower;
         this.SMaxTags = (settings.MaxTags) ? settings.MaxTags : this.SMaxTags;
@@ -57,19 +58,12 @@ class TagEditor {
         });
 
         // Add Tags
-        this.Tb_Input.value.split().forEach((tagname, index) => {
-            if (!this.IsValidName(tagname)) {
-                return
-            }
-            if (this.SToLower) {
-                tagname = tagname.toLowerCase();
-            }
-            this.STags.push(tagname);
-        });
+        this.AddTag(this.Tb_Input.value);
         this.Tb_Input.value = '';
     }
 
     // ! Public Methods
+    // Check Tagname for valid
     IsValidName(name) {
         if (this.SToLower) {
             name = name.toLowerCase();
@@ -85,14 +79,16 @@ class TagEditor {
     }
     // Add Tag to TagEditor
     AddTag(name) {
-        if (!this.IsValidName(name)) {
-            return
-        }
-        if (this.SToLower) {
-            name = name.toLowerCase();
-        }
-        this.STags.push(name);
-        console.info(this.STags);
+        name.split(this.SSeparator).forEach((tagname, index) => {
+            if (!this.IsValidName(tagname)) {
+                return
+            }
+            if (this.SToLower) {
+                tagname = tagname.toLowerCase();
+            }
+            this.STags.push(tagname);
+            console.log(tagname);
+        });
         this.RefreshTags();
     }
     // Removes last tag from TagEditor
@@ -115,16 +111,26 @@ class TagEditor {
             this.B_TagEditor.removeChild(this.B_TagEditor.firstChild);
         }
         this.STags.slice().reverse().forEach((tagname, index) => {
-            const newtag = TagEditor.CreateTag(tagname);
+            const newtag = TagEditor.CreateTag(tagname, () => { 
+                this.RemoveTag(tagname); 
+            });
             this.B_TagEditor.prepend(newtag);
         });
         this.Tb_Tags.value = this.STags.join(' ');
     }
 
+    // Clears all Tags
+    Clear(){
+        this.STags = [];
+        this.RefreshTags();
+    }
+
     // ! Static Methods
 
-    // Returns HtmlElement Tag
-    static CreateTag(name) {
+    // CreateTag - returns (tag) HTMLDivElement
+    // name - tag name
+    // btn_remove_click - function wich work on click remove tag
+    static CreateTag(name, btn_remove_click) {
         const btn_tag = document.createElement('div');
         btn_tag.setAttribute('class', 'btn-tag');
         const tag_name = document.createElement('span');
@@ -132,9 +138,10 @@ class TagEditor {
         const btn_remove = document.createElement('span');
         btn_remove.setAttribute('class', 'remove');
         btn_remove.innerHTML = '×';
-        btn_remove.addEventListener('click', () => {
-            btn_tag.remove();
-        });
+        btn_remove.addEventListener(
+            'click', 
+            (btn_remove_click != null) ? function() {btn_remove_click(); btn_tag.remove();} : () => {btn_tag.remove();}
+        );
         // Construct tag
         btn_tag.appendChild(tag_name);
         btn_tag.appendChild(btn_remove);

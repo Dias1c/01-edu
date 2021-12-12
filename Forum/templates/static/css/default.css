@@ -289,7 +289,6 @@ body {
     flex-wrap: wrap;
 
     width: 100%;
-    min-width: 30%;
     height: min-content;
     resize: none;
     overflow: hidden;
