@@ -1,3 +1,4 @@
+// https://github.com/Dias1c/frontend-utils-js
 // TagEditor - Tag Editor Util
 class TagEditor {
     // ! HTML Elements
@@ -12,7 +13,7 @@ class TagEditor {
     SToLower = true;                                // ToLowercase Tag?
     SMaxTags = 0;                                   // Max Tags Count, 0 == Unlimited
     STags = [];                                     // Writed Tags
-    SSeparator = ' ';                               // Split by
+    SSeparator = ' ';                               // Split by separator
 
     // Inits TagEditor By Settings
     constructor(settings) {
@@ -87,7 +88,6 @@ class TagEditor {
                 tagname = tagname.toLowerCase();
             }
             this.STags.push(tagname);
-            console.log(tagname);
         });
         this.RefreshTags();
     }
@@ -111,8 +111,8 @@ class TagEditor {
             this.B_TagEditor.removeChild(this.B_TagEditor.firstChild);
         }
         this.STags.slice().reverse().forEach((tagname, index) => {
-            const newtag = TagEditor.CreateTag(tagname, () => { 
-                this.RemoveTag(tagname); 
+            const newtag = TagEditor.CreateTag(tagname, () => {
+                this.RemoveTag(tagname);
             });
             this.B_TagEditor.prepend(newtag);
         });
@@ -120,7 +120,7 @@ class TagEditor {
     }
 
     // Clears all Tags
-    Clear(){
+    Clear() {
         this.STags = [];
         this.RefreshTags();
     }
@@ -139,8 +139,8 @@ class TagEditor {
         btn_remove.setAttribute('class', 'remove');
         btn_remove.innerHTML = '×';
         btn_remove.addEventListener(
-            'click', 
-            (btn_remove_click != null) ? function() {btn_remove_click(); btn_tag.remove();} : () => {btn_tag.remove();}
+            'click',
+            (btn_remove_click != null) ? function () { btn_remove_click(); btn_tag.remove(); } : () => { btn_tag.remove(); }
         );
         // Construct tag
         btn_tag.appendChild(tag_name);

@@ -12,11 +12,9 @@
     position: fixed;
     z-index: 10;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
 
-    /* max-width: calc(var(--page-width) - var(--page-padding) * 2); */
-    max-width: var(--page-width);
+    max-width: var(--page-max-width);
+    min-width: var(--page-min-width);
     height: 50px;
     /* padding: 0 10px; */
     border-top: 3px solid var(--primary-main);
@@ -166,7 +164,7 @@
 }
 .header__search{
     position: relative;
-    height: 32px;
+    height: 33px;
     flex: 1;
 }
 .header__search > svg{
