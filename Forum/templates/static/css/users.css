@@ -45,19 +45,19 @@
 }
 
 @media(max-width: 980px) {
-    .tags {
+    .users {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media(max-width: 720px) {
-    .tags {
+    .users {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media(max-width: 640px) {
-    .tags {
+    .users {
         grid-template-columns: repeat(1, 1fr);
     }
 }
