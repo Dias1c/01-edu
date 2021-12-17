@@ -23,10 +23,10 @@ function cb_HeaderSearch_change(e) {
 // cb_HeaderSearch_change - Shows or hide element
 function cb_HeaderMenu_change(e) {
     if (e.target.checked) {
-        b_HeaderMenu.classList.add("d-flex-on-sm");
+        b_HeaderMenu.classList.add("d-flex");
         cb_HeaderMenu.classList.add("header__menu-btn--checked");
     } else {
-        b_HeaderMenu.classList.remove("d-flex-on-sm");
+        b_HeaderMenu.classList.remove("d-flex");
         cb_HeaderMenu.classList.remove("header__menu-btn--checked");
     }
 }
