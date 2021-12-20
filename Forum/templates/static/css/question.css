@@ -1,1 +1,126 @@
-.post-layout {}
+.post-layout {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content;
+}
+
+.post-layout .vote-cell {
+    margin-right: var(--page-padding);
+    /* background-color: rgb(143, 196, 240); */
+    /* border: 1px solid #000; */
+    stroke: #000;
+    width: 40px;
+}
+
+
+.post-cell {
+    /* border: 1px solid #000; */
+    width: 100%;
+    font-size: 1.15rem;
+    /* width: 400px; */
+    /* background-color: rgb(143, 196, 240); */
+}
+
+.post-text {
+    width: 100%;
+    white-space: pre-wrap;
+    /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+    font-size: inherit;
+}
+
+.post-star {
+    width: 70%;
+}
+
+
+.question-marks-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.question-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-bottom: 10px;
+}
+
+.question-user {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-left: auto;
+}
+
+.user-avatar {
+    overflow: hidden;
+    min-width: 38px;
+    max-width: 38px;
+    width: 100%;
+    min-height: 38px;
+    max-height: 38px;
+    height: 100%;
+    margin-right: 5px;
+    border-radius: var(--border-radius);
+}
+
+.user-avatar>img {
+    width: 100%;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-action-time {
+    color: var(--gray-700);
+}
+
+.comments {
+    margin-top: 20px;
+    border-top: 1px solid var(--gray-400);
+}
+
+.comment-layout {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content;
+
+    border-bottom: 1px solid var(--gray-400);
+    padding: calc(var(--page-padding) / 2) 0;
+}
+
+.comment-layout .vote-cell {
+    margin-right: var(--page-padding);
+    width: auto;
+}
+
+.comment-text {
+    width: 100%;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font-size: inherit;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
