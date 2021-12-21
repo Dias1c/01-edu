@@ -129,40 +129,42 @@
                         <!-- POST -->
                         <div class="post-layout">
                             <div class="vote-cell">
-                                <button class="btn-nostyle btn-vote active">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 1000 1000" style="
+                                <div class="post-btns-group">
+                                    <button class="btn-nostyle btn-vote active">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" style="
 	fill: inherit;
     stroke: inherit;
     stroke-width: 100px;" xml:space="preserve">
-                                        <polygon points="500,400 100,800 900,800" />
-                                    </svg>
-                                </button>
-                                <div class="vote-text">
-                                    94
-                                </div>
-                                <button class="btn-nostyle btn-vote">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 1000 1000" style="
+                                            <polygon points="500,400 100,800 900,800" />
+                                        </svg>
+                                    </button>
+                                    <div class="vote-text">
+                                        94
+                                    </div>
+                                    <button class="btn-nostyle btn-vote">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" style="
 	fill: inherit;
     stroke: inherit;
     stroke-width: 100px;" xml:space="preserve">
-                                        <polygon points="500,600 100,200 900,200" />
-                                    </svg>
-                                </button>
-                                <button class="btn-nostyle btn-star">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 1000 1000" class="post-star" style="
+                                            <polygon points="500,600 100,200 900,200" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn-nostyle btn-star">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" class="post-star" style="
 	fill: inherit;
     stroke: inherit;
     " xml:space="preserve">
-                                        <polygon
-                                            points="500,23 655,340 1000,388 750,635 810,980 500,810 190,980 250,635 0,388 345,340" />
-                                    </svg>
-                                </button>
+                                            <polygon
+                                                points="500,23 655,340 1000,388 750,635 810,980 500,810 190,980 250,635 0,388 345,340" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                             <div class="post-cell">
                                 <pre class="post-text">
@@ -203,9 +205,8 @@ I just want to use standard bash.
                                     <div class="comment-layout">
                                         <div class="vote-cell fnt-gray">4</div>
                                         <div class="comment-cell">
-                                            <pre class="comment-text">
-Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.
-                                            </pre>
+                                            <pre
+                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
                                             <div class="comment-details">
                                                 <a class="fnt-link" href="#">t.pimentel</a>
                                                 <span class="fnt-gray">Aug 27 '14 at 14:47</span>
@@ -216,9 +217,8 @@ Wikipedia has a good article on ANSI escape codes! But, though they say there's 
                                     <div class="comment-layout">
                                         <div class="vote-cell fnt-gray">4</div>
                                         <div class="comment-cell">
-                                            <pre class="comment-text">
-Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.
-                                            </pre>
+                                            <pre
+                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
                                             <div class="comment-details">
                                                 <a class="fnt-link" href="#">t.pimentel</a>
                                                 <span class="fnt-gray">Aug 27 '14 at 14:47</span>
@@ -233,9 +233,125 @@ Wikipedia has a good article on ANSI escape codes! But, though they say there's 
                         <!-- ANSWERS -->
                         <div class="answers">
                             <div class="answers-header">
-
+                                <div class="main-subtitle">100 Answers</div>
+                                <div class="content-filter-block ml-auto">
+                                    <div class="btn-group">
+                                        <input type="radio" name="sort" value="Votes" class="d-none" id="rb_sortVotes"
+                                            checked>
+                                        <label class="btn btn--normal" for="rb_sortVotes">Votes</label>
+                                        <input type="radio" name="sort" value="Oldest" class="d-none"
+                                            id="rb_sortOldest">
+                                        <label class="btn btn--normal" for="rb_sortOldest">Oldest</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="post-layout"></div>
+                            <!-- PAGINATION -->
+                            <div class="paginaton-block mr-auto">
+                                <div class="btn btn--small">prev</div>
+                                <div class="btn btn--small">1</div>
+                                <div class="pagination-dots">...</div>
+                                <div class="btn btn--small">3</div>
+                                <div class="btn btn--small">4</div>
+                                <div class="btn btn--small btn--selected">5</div>
+                                <div class="btn btn--small">6</div>
+                                <div class="btn btn--small">7</div>
+                                <div class="pagination-dots">...</div>
+                                <div class="btn btn--small">2021</div>
+                                <div class="btn btn--small">next</div>
+                            </div>
+                            <div class="answers-block">
+                                    <div class="answer-layout">
+                                            <div class="vote-cell">
+                                                <div class="post-btns-group">
+                                                    <button class="btn-nostyle btn-vote active">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                            viewBox="0 0 1000 1000" style="
+                    fill: inherit;
+                    stroke: inherit;
+                    stroke-width: 100px;" xml:space="preserve">
+                                                            <polygon points="500,400 100,800 900,800" />
+                                                        </svg>
+                                                    </button>
+                                                    <div class="vote-text">
+                                                        94
+                                                    </div>
+                                                    <button class="btn-nostyle btn-vote">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                            viewBox="0 0 1000 1000" style="
+                    fill: inherit;
+                    stroke: inherit;
+                    stroke-width: 100px;" xml:space="preserve">
+                                                            <polygon points="500,600 100,200 900,200" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="post-cell">
+                                                <pre class="post-text">
+I know that in bash terminals a reliable way to change color is using ANSI escape sequences. For example:
+echo -e "\033[0;31mbrown text\033[0;00m"
+should output
+
+brown text (in brown)
+Is there a way to output color using a specific RGB set with ANSI? Say I want bright red:
+
+echo -e "**\033[255:0:0m**red text\033[0;00m"
+Does this sort of thing exist?
+
+I just want to use standard bash.
+                                                </pre>
+                                                <div class="question-marks-block">
+                                                    <div class="question-tags">
+                                                        <a href="#" class="btn-tag">html</a>
+                                                        <a href="#" class="btn-tag">css</a>
+                                                        <a href="#" class="btn-tag">golang</a>
+                
+                                                    </div>
+                                                    <div class="question-user">
+                                                        <a class="user-avatar" href="user.html"><img src="static/img/avatar.jpeg"
+                                                                alt="user-avatar">
+                                                        </a>
+                                                        <div class="user-details">
+                                                            <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                                    class="relativetime">1 mins ago</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- COMMENTS -->
+                                                <div class="comments">
+                                                    <!-- COMMENT LAYOUT -->
+                                                    <div class="comment-layout">
+                                                        <div class="vote-cell fnt-gray">4</div>
+                                                        <div class="comment-cell">
+                                                            <pre
+                                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                            <div class="comment-details">
+                                                                <a class="fnt-link" href="#">t.pimentel</a>
+                                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- COMMENT LAYOUT -->
+                                                    <div class="comment-layout">
+                                                        <div class="vote-cell fnt-gray">4</div>
+                                                        <div class="comment-cell">
+                                                            <pre
+                                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                            <div class="comment-details">
+                                                                <a class="fnt-link" href="#">t.pimentel</a>
+                                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- ADD COMMENT -->
+                                                    <button class="btn-nostyle btn--small fnt-gray">Add comment</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
                         </div>
                     </div>
                     <div class="content-sidebar">

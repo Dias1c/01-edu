@@ -1,17 +1,13 @@
-.post-layout {
+.post-layout, .answer-layout {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content;
 }
 
-.post-layout .vote-cell {
+.post-layout .vote-cell, .answer-layout .vote-cell {
     margin-right: var(--page-padding);
-    /* background-color: rgb(143, 196, 240); */
-    /* border: 1px solid #000; */
-    stroke: #000;
-    width: 40px;
+    min-width: 30px;
 }
-
 
 .post-cell {
     /* border: 1px solid #000; */
@@ -92,7 +88,7 @@
 
 .comments {
     margin-top: 20px;
-    border-top: 1px solid var(--gray-400);
+    border-top: 1px solid var(--gray-300);
 }
 
 .comment-layout {
@@ -100,7 +96,7 @@
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content;
 
-    border-bottom: 1px solid var(--gray-400);
+    border-bottom: 1px solid var(--gray-300);
     padding: calc(var(--page-padding) / 2) 0;
 }
 
@@ -123,4 +119,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.answers-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    margin: var(--page-padding) 0;
+}
+
+.answer-layout{
+    padding-top: var(--page-padding);
+    border-bottom: 1px solid var(--gray-300);
 }
