@@ -179,8 +179,7 @@ Is there a way to output color using a specific RGB set with ANSI? Say I want br
 echo -e "**\033[255:0:0m**red text\033[0;00m"
 Does this sort of thing exist?
 
-I just want to use standard bash.
-                                </pre>
+I just want to use standard bash.</pre>
                                 <div class="question-marks-block">
                                     <div class="question-tags">
                                         <a href="#" class="btn-tag">html</a>
@@ -260,97 +259,112 @@ I just want to use standard bash.
                                 <div class="btn btn--small">next</div>
                             </div>
                             <div class="answers-block">
-                                    <div class="answer-layout">
-                                            <div class="vote-cell">
-                                                <div class="post-btns-group">
-                                                    <button class="btn-nostyle btn-vote active">
-                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                            viewBox="0 0 1000 1000" style="
+                                <div class="answer-layout">
+                                    <div class="vote-cell">
+                                        <div class="post-btns-group">
+                                            <button class="btn-nostyle btn-vote active">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 1000 1000" style="
                     fill: inherit;
                     stroke: inherit;
                     stroke-width: 100px;" xml:space="preserve">
-                                                            <polygon points="500,400 100,800 900,800" />
-                                                        </svg>
-                                                    </button>
-                                                    <div class="vote-text">
-                                                        94
-                                                    </div>
-                                                    <button class="btn-nostyle btn-vote">
-                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                            viewBox="0 0 1000 1000" style="
-                    fill: inherit;
-                    stroke: inherit;
-                    stroke-width: 100px;" xml:space="preserve">
-                                                            <polygon points="500,600 100,200 900,200" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
+                                                    <polygon points="500,400 100,800 900,800" />
+                                                </svg>
+                                            </button>
+                                            <div class="vote-text">
+                                                11818
                                             </div>
-                                            <div class="post-cell">
-                                                <pre class="post-text">
-I know that in bash terminals a reliable way to change color is using ANSI escape sequences. For example:
-echo -e "\033[0;31mbrown text\033[0;00m"
-should output
+                                            <button class="btn-nostyle btn-vote">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 1000 1000" style="
+                    fill: inherit;
+                    stroke: inherit;
+                    stroke-width: 100px;" xml:space="preserve">
+                                                    <polygon points="500,600 100,200 900,200" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="post-cell">
+                                        <pre
+                                            class="post-text">
+# Heading level 1
+                                            
+Add/remove files to get things the way you want:
+git rm classdir
+git add sourcedir
+Then amend the commit:
+                                                    
+git commit --amend
+The previous, erroneous commit will be edited to reflect the new index state - in other words, it'll be like you never made the mistake in the first place.
+                                                    
+Note that you should only do this if you haven't pushed yet. If you have pushed, then you'll just have to commit a fix normally.</pre>
+                                        <div class="question-marks-block">
+                                            <div class="question-tags">
+                                                <a href="#" class="btn-tag">html</a>
+                                                <a href="#" class="btn-tag">css</a>
+                                                <a href="#" class="btn-tag">golang</a>
 
-brown text (in brown)
-Is there a way to output color using a specific RGB set with ANSI? Say I want bright red:
-
-echo -e "**\033[255:0:0m**red text\033[0;00m"
-Does this sort of thing exist?
-
-I just want to use standard bash.
-                                                </pre>
-                                                <div class="question-marks-block">
-                                                    <div class="question-tags">
-                                                        <a href="#" class="btn-tag">html</a>
-                                                        <a href="#" class="btn-tag">css</a>
-                                                        <a href="#" class="btn-tag">golang</a>
-                
-                                                    </div>
-                                                    <div class="question-user">
-                                                        <a class="user-avatar" href="user.html"><img src="static/img/avatar.jpeg"
-                                                                alt="user-avatar">
-                                                        </a>
-                                                        <div class="user-details">
-                                                            <a class="linked-text" href="user.html">Dias Kappassov</a>
-                                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
-                                                                    class="relativetime">1 mins ago</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- COMMENTS -->
-                                                <div class="comments">
-                                                    <!-- COMMENT LAYOUT -->
-                                                    <div class="comment-layout">
-                                                        <div class="vote-cell fnt-gray">4</div>
-                                                        <div class="comment-cell">
-                                                            <pre
-                                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
-                                                            <div class="comment-details">
-                                                                <a class="fnt-link" href="#">t.pimentel</a>
-                                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- COMMENT LAYOUT -->
-                                                    <div class="comment-layout">
-                                                        <div class="vote-cell fnt-gray">4</div>
-                                                        <div class="comment-cell">
-                                                            <pre
-                                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
-                                                            <div class="comment-details">
-                                                                <a class="fnt-link" href="#">t.pimentel</a>
-                                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- ADD COMMENT -->
-                                                    <button class="btn-nostyle btn--small fnt-gray">Add comment</button>
+                                            </div>
+                                            <div class="question-user">
+                                                <a class="user-avatar" href="user.html"><img
+                                                        src="static/img/avatar.jpeg" alt="user-avatar">
+                                                </a>
+                                                // output Markdown
+console.log(markdown);<div class="user-details">
+                                                    <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                                    <div class="user-action-time">asked <span
+                                                            title="2021.12.03 20:20:52" class="relativetime">1 mins
+                                                            ago</span></div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- COMMENTS -->
+                                        <div class="comments">
+                                            <!-- COMMENT LAYOUT -->
+                                            <div class="comment-layout">
+                                                <div class="vote-cell fnt-gray">4</div>
+                                                <div class="comment-cell">
+                                                    <pre
+                                                        class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                    <div class="comment-details">
+                                                        <a class="fnt-link" href="#">t.pimentel</a>
+                                                        <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- COMMENT LAYOUT -->
+                                            <div class="comment-layout">
+                                                <div class="vote-cell fnt-gray">4</div>
+                                                <div class="comment-cell">
+                                                    <pre
+                                                        class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                    <div class="comment-details">
+                                                        <a class="fnt-link" href="#">t.pimentel</a>
+                                                        <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ADD COMMENT -->
+                                            <button class="btn-nostyle btn--small fnt-gray">Add comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="paginaton-block mr-auto mt-12">
+                                    <div class="btn btn--small">prev</div>
+                                    <div class="btn btn--small">1</div>
+                                    <div class="pagination-dots">...</div>
+                                    <div class="btn btn--small">3</div>
+                                    <div class="btn btn--small">4</div>
+                                    <div class="btn btn--small btn--selected">5</div>
+                                    <div class="btn btn--small">6</div>
+                                    <div class="btn btn--small">7</div>
+                                    <div class="pagination-dots">...</div>
+                                    <div class="btn btn--small">2021</div>
+                                    <div class="btn btn--small">next</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -400,6 +414,16 @@ I just want to use standard bash.
 
     <!-- JS -->
     <script src="static/js/header.js"></script>
+    <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+    <script>
+// create an instance of Turndown service
+const turndownService = new TurndownService();
+
+let Texts = Array.from(document.getElementsByClassName("post-text"));
+Texts.forEach((element) => {
+    element.innerHTML = turndownService.turndown(element.innerHTML);
+});
+    </script>
 </body>
 
 </html>
