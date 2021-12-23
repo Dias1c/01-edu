@@ -708,6 +708,40 @@ body {
     text-align: center;
 }
 
+.fnt-size-100{
+    font-size: 1rem;
+}
+.fnt-size-110{
+    font-size: 1.1rem;
+}
+.fnt-size-120{
+    font-size: 1.2rem;
+}
+.fnt-size-130{
+    font-size: 1.3rem;
+}
+.fnt-size-140{
+    font-size: 1.4rem;
+}
+.fnt-size-150{
+    font-size: 1.5rem;
+}
+.fnt-size-160{
+    font-size: 1.6rem;
+}
+.fnt-size-170{
+    font-size: 1.7rem;
+}
+.fnt-size-180{
+    font-size: 1.8rem;
+}
+.fnt-size-190{
+    font-size: 1.9rem;
+}
+.fnt-size-200{
+    font-size: 2rem;
+}
+
 .fnt-primary {
     color: var(--primary-font);
 }
