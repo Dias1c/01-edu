@@ -126,6 +126,10 @@ body {
     padding: 8px 10px;
 }
 
+.btn--big{
+    padding: 12px 16px;
+}
+
 .btn--secondary-v1 {
     color: var(--secondary-composite);
     background-color: var(--secondary-main);
@@ -234,6 +238,11 @@ body {
 
 .btn-tag:first-of-type {
     margin-left: 0;
+}
+
+.btn-tag--secondary{
+    background-color: var(--primary-composite);
+    color: var(--primary-main);
 }
 
 .tag-line {
@@ -747,6 +756,9 @@ body {
     color: var(--primary-font);
 }
 
+.fnt-color-inherit{
+    color: inherit;
+}
 .fnt-gray {
     color: var(--gray-500);
 }
