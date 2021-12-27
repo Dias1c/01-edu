@@ -413,16 +413,6 @@ console.log(markdown);<div class="user-details">
 
     <!-- JS -->
     <script src="static/js/header.js"></script>
-    <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
-    <script>
-// create an instance of Turndown service
-const turndownService = new TurndownService();
-
-let Texts = Array.from(document.getElementsByClassName("post-text"));
-Texts.forEach((element) => {
-    element.innerHTML = turndownService.turndown(element.innerHTML);
-});
-    </script>
 </body>
 
 </html>
