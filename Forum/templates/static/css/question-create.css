@@ -1,19 +1,19 @@
-.question__input-text{
+.question__editor-text{
     min-height: 500px;
     overflow-y: auto;
     resize: vertical;
 }
 
-.question-title {
+.question__preview-title {
     margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--gray-300);
 }
 
-.question-tags{
+.question__preview-tags{
     
 }
 
-.question-textblock{
+.question__preview-text{
 
 }

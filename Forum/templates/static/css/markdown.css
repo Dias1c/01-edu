@@ -1,0 +1,114 @@
+:root{
+    --md-bg-color: var(--background-primary);
+    --md-fg-color: var(--primary-font);
+    --md-border-width: 1px;
+    --md-border-color: var(--gray-400);
+    --md-border-radius: 5px;
+    --md-margin-bottom: 16px;
+
+    --md-blockquote-border-color: var(--primary-main);
+    --md-blockquote-border-width: 5px;
+    --md-blockquote-bg-color: none;
+
+    --md-pre-code-bg: var(--gray-100);
+    --md-code-bg: var(--gray-200);
+    
+    --md-link-color: var(--link-font);
+}
+
+/* HEADING "#" */
+section h1, section h2, section h3,section h4, section h5, section h6{
+    font-weight: 600;
+    padding-top: 20px;
+    margin-bottom: var(--md-margin-bottom);
+}
+
+section h1{
+    font-size: 2.2rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--md-border-color);
+}
+
+section h2 {
+    font-size: 2rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--md-border-color);
+}
+section h3 {
+    font-size: 1.8rem;
+}
+section h4 {
+    font-size: 1.6rem;
+}
+section h5{
+    font-size: 1.4rem;
+}
+section h6{
+    font-size: 1.2rem;
+}
+
+/* TEXT */
+section p {
+    margin-bottom: var(--md-margin-bottom);
+}
+/* HR */
+hr{
+    padding: 1px;
+    background-color: var(--md-border-color);
+    border: none;
+    margin-bottom: var(--md-margin-bottom);
+}
+
+/* BLOCKQUTE ">" */
+section blockquote {
+    font-size: 1.1rem;
+    background-color: var(--md-blockquote-bg-color);
+    border-left: var(--md-blockquote-border-width) solid var(--md-blockquote-border-color);
+    padding: 5px 2px 2px 10px;
+    margin-bottom: var(--md-margin-bottom);
+}
+
+blockquote p{
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+
+blockquote blockquote {
+    margin-bottom: 2px;
+}
+
+
+/* CODE "```" */
+section pre{
+    padding: 15px;
+    background-color: var(--md-pre-code-bg);
+    border-radius: var(--md-border-radius);
+    margin-bottom: var(--md-margin-bottom);
+}
+
+section pre code{
+    /* TODO Chanage font */
+    line-height: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+/* CODE "`" */
+p code{
+    padding: 3px 5px;
+    background-color: var(--md-code-bg);
+    border-radius: 2px;
+    color: var();
+}
+
+/* link "[]()" */
+section a{
+    color: var(--md-link-color);
+}
+
+section a:hover{
+    text-decoration: underline;
+}
+
+/* TODO Style Lists */
+/* TODO Style Checkboxes */
+/* TODO Style Summary */
+/* TODO Style Keys */
