@@ -6,17 +6,17 @@ const tagEditor = new TagEditor({
 
 // PREVIEW
 // import "/static/js/showdown.js";
+let mdConverter = new showdown.Converter();
 let TabRadioButtons = document.getElementsByName("tab");
-let mdConverter = new showdown.Converter()
 
 // Set Show and hide
-TabRadioButtons.forEach((rb)=>{
+TabRadioButtons.forEach((rb) => {
     const tabBlockName = rb.getAttribute("data-tab-block");
     const tabBlock = document.querySelector(tabBlockName);
 
     const tabBlocksName = rb.getAttribute("data-tab-blocks");
     const tabBlocks = document.querySelectorAll(tabBlocksName);
-    
+
     let rb_OnChange = (e) => {
         tabBlocks.forEach((block) => {
             block.hidden = true;
@@ -30,7 +30,7 @@ TabRadioButtons.forEach((rb)=>{
     rb.addEventListener('change', rb_OnChange)
 });
 
-function CreateTag(name){
+function CreateTag(name) {
     const btn_tag = document.createElement('div');
     btn_tag.setAttribute('class', 'btn-tag');
     btn_tag.innerHTML = name
@@ -48,13 +48,13 @@ const previewTitle = document.getElementById("question__preview-title");
 const previewTags = document.getElementById("question__preview-tags");
 const previewText = document.getElementById("question__preview-text");
 
-let RenderPreveiw = ()=>{
+let RenderPreveiw = () => {
     previewTitle.innerHTML = editorTitle.value
     // 
     previewTags.innerHTML = ""
-    editorTags.value.split(" ").forEach((name)=>{
-        if(name != "") {
-            previewTags.appendChild(CreateTag(name)); 
+    editorTags.value.split(" ").forEach((name) => {
+        if (name != "") {
+            previewTags.appendChild(CreateTag(name));
         }
     })
     // 
