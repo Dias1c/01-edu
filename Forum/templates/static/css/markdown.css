@@ -85,23 +85,21 @@ hr {
 
 /* BLOCKQUTE ">" */
 .markdown blockquote {
-    font-size: 1.1em;
     background-color: var(--md-blockquote-bg-color);
     border-left: var(--md-blockquote-border-width) solid var(--md-blockquote-border-color);
-    padding: 5px 1em 2px 1em;
+    padding: .1em 1em .05em 0.8em;
 
     margin-bottom: var(--md-margin-bottom);
 }
 
 blockquote p {
-    padding-bottom: 3px;
+    padding-bottom: 0.05em;
     margin-bottom: 0px;
 }
 
 blockquote blockquote {
     margin-bottom: 2px !important;
 }
-
 
 /* CODE "```" */
 .markdown pre {
@@ -125,6 +123,12 @@ p code {
     border-radius: 0.3em;
     color: var();
 }
+
+/* IMG "![name](link)" */
+.markdown img{
+    max-width: 100%;
+}
+
 
 /* link "[]()" */
 .markdown a {
