@@ -64,14 +64,14 @@
     left: 0;
     background: var(--fg-hover-color);
 
-    transition: .2s;
+    transition: transform .2s, top .1s;
 }
 .header__menu-btn span::before{
-    top: -5px;
+    top: -6px;
 
 }
 .header__menu-btn span::after{
-    top: 5px;
+    top: 6px;
 }
 
 .header__menu-btn--checked{
@@ -297,6 +297,8 @@
 .header__auth-btns{
     display: flex;
     flex-direction: row;
+    height: 100%;
+    padding: 7px 0;
     margin-right: 10px;
 }
 
