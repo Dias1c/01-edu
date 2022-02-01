@@ -1,26 +1,23 @@
 package main
 
 import (
-	"forum"
-	"forum/repository"
-	"forum/service"
-	"forum/web/api"
-	handler "forum/web/api"
+	"forum/architecture/repository"
+	"forum/architecture/service"
+	"forum/architecture/web/handler"
+	"forum/architecture/web/server"
 	"log"
-	"net/http"
 	"os"
 )
 
 func main() {
-	http.HandleFunc("/posts", api.GetAllPosts)
+	repos := repository.NewRepo(nil)
+	services := service.NewService(repos)
+	handlers := handler.NewHandler(services)
 
-	repos := repository.NewRepository()
-	service := service.NewService(repos)
-	handlers := handler.NewHandler(service)
-
-	server := new(forum.Server)
+	server := new(server.Server)
 	if err := server.Run("8080", handlers.InitRoutes()); err != nil {
 		log.Println(err)
 		os.Exit(1)
 	}
+	os.Exit(0)
 }
