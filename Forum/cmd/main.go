@@ -12,7 +12,11 @@ import (
 func main() {
 	repos := repository.NewRepo(nil)
 	services := service.NewService(repos)
-	handlers := handler.NewHandler(services)
+	handlers, err := handler.NewHandler(services)
+	if err != nil {
+		log.Println(err)
+		os.Exit(1)
+	}
 
 	server := new(server.Server)
 	if err := server.Run("8080", handlers.InitRoutes()); err != nil {
