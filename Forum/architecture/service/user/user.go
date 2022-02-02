@@ -1,11 +1,11 @@
 package user
 
-import "forum/architecture/repository"
+import "forum/architecture/models"
 
 type UserService struct {
-	repo repository.IUser
+	repo models.IUserService
 }
 
-func NewUserService(repo repository.IUser) *UserService {
+func NewUserService(repo models.IUserService) *UserService {
 	return &UserService{repo}
 }

@@ -3,14 +3,15 @@ package repository
 import (
 	"database/sql"
 
+	"forum/architecture/models"
 	"forum/architecture/repository/question"
 	"forum/architecture/repository/user"
 )
 
 //Repository ..
 type Repository struct {
-	User     IUser
-	Question IQuestion
+	User     models.IUserRepo
+	Question models.IQuestionRepo
 }
 
 //NewRepo ..

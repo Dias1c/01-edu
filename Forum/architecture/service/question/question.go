@@ -1,13 +1,11 @@
 package question
 
-import (
-	"forum/architecture/repository"
-)
+import "forum/architecture/models"
 
 type QuestionService struct {
-	repo repository.IQuestion
+	repo models.IQuestionService
 }
 
-func NewQuestionService(repo repository.IQuestion) *QuestionService {
+func NewQuestionService(repo models.IQuestionService) *QuestionService {
 	return &QuestionService{repo}
 }

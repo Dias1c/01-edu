@@ -1,14 +1,15 @@
 package service
 
 import (
+	"forum/architecture/models"
 	"forum/architecture/repository"
 	"forum/architecture/service/question"
 	"forum/architecture/service/user"
 )
 
 type Service struct {
-	User     IUser
-	Question IQuestion
+	User     models.IUserService
+	Question models.IQuestionService
 }
 
 func NewService(repo *repository.Repository) *Service {
