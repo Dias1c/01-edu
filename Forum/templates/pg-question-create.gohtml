@@ -1,4 +1,4 @@
-{{ define "question-create" }}
+{{ define "pg-question-create" }}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,17 +21,11 @@
 <body>
     <div class="page">
         <!-- HEADER -->
-        {{ template "header.gohtml" }}
+        {{ template "md-header-burger-of" }}
         <!-- CONTENT -->
         <div class="container__inner">
             <div class="main-sidebar-container" data-hide-on-sm>
-                <div class="main-sidebar">
-                    <a class="sidebar-nav-link" href="index.html">Home</a>
-                    <p class="sidebar-nav-title">Public</p>
-                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
-                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
-                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
-                </div>
+                {{ template "md-sidebar-menu-nav" }}
             </div>
             <div class="container-content">
                 <div class="container-content__intro">
@@ -67,33 +61,8 @@
                             </div>
                             <div class="content-intro-group">
                                 <h3 class="main-subtitle mb-6">Text:</h3>
-                                <!-- # Heading level 1
-## Heading level 2
-### Heading level 3
-#### Heading level 4
-##### Heading level 5
-###### Heading level 6
-
-**bold text**
-*italicized text*
-> blockquote
-
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
->> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with 
-
-> #### The quarterly results look great!
->
-> - Revenue was off the chart.
-> - Profits were higher than ever.
->
->  *Everything* is going according to **plan**.
-
-~~Strikethrough text~~
- -->
-                                <textarea type="text" name="" placeholder="Text of question..."
-                                    class="textblock__input question__editor-text" id="question__editor-text">
-Markdown Cheatsheet<a name="TOP"></a>
+                                <textarea type="text" name="" placeholder="Text of question..." class="textblock__input question__editor-text" id="question__editor-text">
+Markdown Cheatsheet
 ===================
 
 - - - - 
@@ -360,7 +329,7 @@ Emoji:
             </div>
         </div>
         <!-- FOOTER -->
-        {{ template "footer.gohtml" }}
+        {{ template "md-footer" }}
     </div>
 
     <!-- JS -->

@@ -1,4 +1,4 @@
-{{ define "index" }}
+{{ define "pg-index" }}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- TAB -->
     <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
-    <title>Questions</title>
+    <title>Main</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="static/css/default.css">
@@ -19,7 +19,7 @@
 <body>
     <div class="page">
         <!-- HEADER -->
-        {{ template "header-burger-on" . }}
+        {{ template "md-header-burger-on" . }}
         <!-- container__intro -->
         <div class="container container__intro">
             <img class="container container__intro__img"
@@ -213,7 +213,7 @@
         </div>
 
         <!-- FOOTER -->
-        {{ template "footer" . }}
+        {{ template "md-footer" . }}
     </div>
 
     <!-- JS -->

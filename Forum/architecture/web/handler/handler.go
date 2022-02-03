@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"forum/architecture/service"
 	"net/http"
+	"path/filepath"
 	"text/template"
 )
 
@@ -38,13 +39,8 @@ func (h *Handler) InitRoutes() http.Handler {
 
 //
 func GetTemplate() (*template.Template, error) {
-	filepaths := []string{
-		"templates/index.gohtml",
-		"templates/header-burger-of.gohtml",
-		"templates/header-burger-on.gohtml",
-		"templates/footer.gohtml",
-		"templates/question-create.gohtml",
-	}
+	// Gets All Templates in folder templates
+	filepaths, err := filepath.Glob("templates/*.gohtml")
 	files, err := template.ParseFiles(filepaths...)
 	if err != nil {
 		return nil, fmt.Errorf("GetTemplate: %w", err)
