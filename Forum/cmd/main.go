@@ -12,7 +12,7 @@ import (
 func main() {
 	repos := repository.NewRepo(nil)
 	services := service.NewService(repos)
-	handlers, err := handler.NewHandler(services)
+	handlers, err := handler.NewMainHandler(services)
 	if err != nil {
 		log.Println(err)
 		os.Exit(1)

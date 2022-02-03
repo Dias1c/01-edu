@@ -1,16 +1,16 @@
 {{ define "md-header-burger-of" }}
     <header class="container header">
-            <label class="header__menu-btn d-flex" id="cb_HeaderMenu">
+            <label class="header__menu-btn" id="cb_HeaderMenu">
                 <input type="checkbox" />
                 <span></span>
             </label>
-            <div class="header__menu-block" id="b_HeaderMenu">
+            <div class="header__menu-block d-none-on-mt-sm" id="b_HeaderMenu">
                 <div class="main-sidebar">
-                    <a class="sidebar-nav-link" href="/" data-nav-selected>Home</a>
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
                     <p class="sidebar-nav-title">Public</p>
-                    <a class="sidebar-nav-link sub-nav-link" href="questions">Questions</a>
-                    <a class="sidebar-nav-link sub-nav-link" href="tags">Tags</a>
-                    <a class="sidebar-nav-link sub-nav-link" href="users">Users</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
                 </div>
             </div>
 
@@ -74,7 +74,6 @@
                     </div>
                 </div>
             </form>
-            
             <!-- header BTNS or User -->
             {{ with .User }}
                 <div class="header__auth-btns">

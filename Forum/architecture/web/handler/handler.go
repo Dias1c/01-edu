@@ -3,47 +3,33 @@ package handler
 import (
 	"fmt"
 	"forum/architecture/service"
+	"forum/architecture/web/handler/api"
+	"forum/architecture/web/handler/view"
 	"net/http"
-	"path/filepath"
-	"text/template"
 )
 
-type Handler struct {
-	service   *service.Service
-	templates *template.Template
+type MainHandler struct {
+	apiHandler  *api.ApiHandler
+	viewHandler *view.ViewHandler
 }
 
 //
-func NewHandler(service *service.Service) (*Handler, error) {
-	templates, err := GetTemplate()
+func NewMainHandler(service *service.Service) (*MainHandler, error) {
+	apiHandler := api.NewApiHandler(service)
+	viewHandler, err := view.NewViewHandler()
 	if err != nil {
-		return nil, fmt.Errorf("NewHandler: %w", err)
+		return nil, fmt.Errorf("NewMainHandler: %w", err)
 	}
-	return &Handler{
-		service:   service,
-		templates: templates,
+	return &MainHandler{
+		apiHandler:  apiHandler,
+		viewHandler: viewHandler,
 	}, nil
 }
 
 //
-func (h *Handler) InitRoutes() http.Handler {
+func (m *MainHandler) InitRoutes() http.Handler {
 	mux := http.NewServeMux()
-
-	// HERE IS ALL ROUTES
-	fsStatic := http.FileServer(http.Dir("templates/static/"))
-	mux.Handle("/static/", http.StripPrefix("/static/", fsStatic))
-
-	mux.HandleFunc("/test", h.TestHandler)
+	m.apiHandler.InitRoutes(mux)
+	m.viewHandler.InitRoutes(mux)
 	return mux
-}
-
-//
-func GetTemplate() (*template.Template, error) {
-	// Gets All Templates in folder templates
-	filepaths, err := filepath.Glob("templates/*.gohtml")
-	files, err := template.ParseFiles(filepaths...)
-	if err != nil {
-		return nil, fmt.Errorf("GetTemplate: %w", err)
-	}
-	return template.Must(files, nil), nil
 }

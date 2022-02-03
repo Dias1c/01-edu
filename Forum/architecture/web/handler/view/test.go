@@ -1,0 +1,24 @@
+package view
+
+import (
+	"log"
+	"net/http"
+)
+
+// TestHandler - Handle for Testing
+func (v *ViewHandler) TestHandler(w http.ResponseWriter, r *http.Request) {
+	// err := v.templates.ExecuteTemplate(w, "pg-index", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-signup", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-login", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-question", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-questions", nil)
+	err := v.templates.ExecuteTemplate(w, "pg-question-create", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-tags", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-user", nil)
+	// err := v.templates.ExecuteTemplate(w, "pg-users", nil)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
