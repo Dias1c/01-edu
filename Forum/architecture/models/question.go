@@ -4,8 +4,8 @@ type Question struct {
 	Id    int
 	Title string
 	Text  string
-	// Tags     []*Tag
-	// Answers  []*Answer
+	//? Tags     []*Tag
+	//? Answers  []*Answer
 	UserId int
 }
 

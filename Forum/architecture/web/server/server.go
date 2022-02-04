@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -19,6 +20,7 @@ func (s *Server) Run(port string, handler http.Handler) error {
 		WriteTimeout:   10 * time.Second,
 	}
 
-	log.Printf("Sever started on http://localhost%s\n", s.httpServer.Addr)
-	return s.httpServer.ListenAndServe()
+	log.Printf("Server runs on http://localhost%s\n", s.httpServer.Addr)
+	err := s.httpServer.ListenAndServe()
+	return fmt.Errorf("Run: %w", err)
 }

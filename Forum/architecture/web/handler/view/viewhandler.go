@@ -11,7 +11,6 @@ type ViewHandler struct {
 	templates *template.Template
 }
 
-//
 func newTemplate() (*template.Template, error) {
 	// Gets All Templates in folder templates
 	filepaths, err := filepath.Glob("templates/*.gohtml")
@@ -22,7 +21,6 @@ func newTemplate() (*template.Template, error) {
 	return template.Must(files, nil), nil
 }
 
-//
 func NewViewHandler() (*ViewHandler, error) {
 	templates, err := newTemplate()
 	if err != nil {
@@ -33,7 +31,6 @@ func NewViewHandler() (*ViewHandler, error) {
 	}, nil
 }
 
-//
 func (v *ViewHandler) InitRoutes(mux *http.ServeMux) {
 	// HERE IS ALL ROUTES
 	fsStatic := http.FileServer(http.Dir("templates/static/"))

@@ -1,12 +1,13 @@
 package main
 
 import (
+	"log"
+	"os"
+
 	"forum/architecture/repository"
 	"forum/architecture/service"
 	"forum/architecture/web/handler"
 	"forum/architecture/web/server"
-	"log"
-	"os"
 )
 
 func main() {
@@ -20,7 +21,7 @@ func main() {
 
 	server := new(server.Server)
 	if err := server.Run("8080", handlers.InitRoutes()); err != nil {
-		log.Println(err)
+		log.Printf("ERROR: %s\n", err)
 		os.Exit(1)
 	}
 	os.Exit(0)

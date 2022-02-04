@@ -8,13 +8,11 @@ import (
 	"forum/architecture/repository/user"
 )
 
-//Repository ..
 type Repository struct {
 	User     models.IUserRepo
 	Question models.IQuestionRepo
 }
 
-//NewRepo ..
 func NewRepo(db *sql.DB) *Repository {
 	return &Repository{
 		User:     user.NewUserRepo(db),

@@ -2,10 +2,11 @@ package handler
 
 import (
 	"fmt"
+	"net/http"
+
 	"forum/architecture/service"
 	"forum/architecture/web/handler/api"
 	"forum/architecture/web/handler/view"
-	"net/http"
 )
 
 type MainHandler struct {
@@ -13,7 +14,6 @@ type MainHandler struct {
 	viewHandler *view.ViewHandler
 }
 
-//
 func NewMainHandler(service *service.Service) (*MainHandler, error) {
 	apiHandler := api.NewApiHandler(service)
 	viewHandler, err := view.NewViewHandler()
@@ -26,7 +26,6 @@ func NewMainHandler(service *service.Service) (*MainHandler, error) {
 	}, nil
 }
 
-//
 func (m *MainHandler) InitRoutes() http.Handler {
 	mux := http.NewServeMux()
 	m.apiHandler.InitRoutes(mux)

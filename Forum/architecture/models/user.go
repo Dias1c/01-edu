@@ -10,7 +10,7 @@ type User struct {
 	Lastname    string
 	Password    string
 	CreatedTime time.Time
-	// PHOTO?
+	//? PHOTO
 }
 
 type IUserService interface {
@@ -21,7 +21,6 @@ type IUserService interface {
 	GetByID(id int) (*User, error)
 	// GetByNickname(nickname string) (*model.User, error)
 	// GetAll(from, offset int) error
-
 	// CanLogin(user *model.User) error
 }
 
@@ -33,6 +32,5 @@ type IUserRepo interface {
 	GetByID(id int) (*User, error)
 	// GetByNickname(nickname string) (*model.User, error)
 	// GetAll(from, offset int) error
-
 	// CanLogin(user *model.User) error
 }
