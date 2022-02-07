@@ -1,33 +1,56 @@
-DROP TABLE IF EXISTS users;
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nickname    TEXT UNIQUE,
-	fistname    TEXT,
-	lastname    TEXT,
-	password    TEXT
-	-- created_time string
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    nickname TEXT,
+    email TEXT,
+    created_at TEXT,
+    password TEXT,
+    first_name TEXT,
+    last_name TEXT
 );
 
-DROP TABLE IF EXISTS questions;
-CREATE TABLE questions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    text TEXT,
+CREATE TABLE IF NOT EXISTS sessions (
+    id INTEGER PRIMARY KEY,
+    uuid TEXT,
     user_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    created_at TEXT
 );
 
--- INSERT DATA TO USERS
-INSERT INTO users (nickname, fistname, lastname, password) VALUES 
-('AliceNick','Alice','Alicevich','alicesuper'),
-('BobNick','Bob','Bobovich','bobsuper'),
-('ClaraNick','Clara','Clarovich','clarasuper');
+CREATE TABLE IF NOT EXISTS tags (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
 
--- INSERT DATA QUESTIONS
-INSERT INTO questions (title, text, user_id) VALUES 
-('How change background in HTML?', 'I have html with this dat...', 3);
+CREATE TABLE IF NOT EXISTS posts (
+    id INTEGER PRIMARY KEY,
+    content TEXT,
+    user_id INTEGER,
+    created_at TEXT
+);
 
+CREATE TABLE IF NOT EXISTS comments (
+    id INTEGER PRIMARY KEY,
+    content TEXT,
+    user_id INTEGER,
+    created_at TEXT,
+    post_id INTEGER
+);
 
--- SHOW ALL USERS
-SELECT * FROM users;
-SELECT * FROM questions;
+CREATE TABLE IF NOT EXISTS questions (
+    id INTEGER PRIMARY KEY,
+    post_id INTEGER,
+    title TEXT,
+    views INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS likes (
+    id INTEGER PRIMARY KEY,
+    user_id TEXT,
+    post_id TEXT,
+    liked INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS tags_questions (
+    id INTEGER PRIMARY KEY,
+    tag_ig INTEGER,
+    question_id INTEGER
+);
