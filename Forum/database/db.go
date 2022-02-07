@@ -3,7 +3,6 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"log"
 	"os"
 	"path/filepath"
 
@@ -17,8 +16,7 @@ import (
 func InitDB() (*sql.DB, error) {
 	err := os.MkdirAll(configs.DB_PATH, os.ModeDir)
 	if err != nil {
-		log.Printf("Error while trying create directory.\nDescription: %s", err.Error())
-		return nil, err
+		return nil, fmt.Errorf("InitDB: %w", err)
 	}
 	dbPathField := filepath.Join(configs.DB_PATH, configs.DB_NAME)
 	// connection field from configs
@@ -28,22 +26,19 @@ func InitDB() (*sql.DB, error) {
 	}
 	db, err := sql.Open(configs.DBDriverName, dbPathField)
 	if err != nil {
-		log.Printf("Error while trying connect to database.\nDescription: %s", err.Error())
-		return nil, err
+		return nil, fmt.Errorf("InitDB: %w", err)
 	}
 	err = db.Ping()
 	if err != nil {
-		log.Printf("Error while trying ping to database.\nDescription: %s", err.Error())
 		db.Close()
-		return nil, err
+		return nil, fmt.Errorf("InitDB: %w", err)
 	}
 	err = checkDB(db)
 	if err != nil {
-		log.Printf("Error while trying check database scheme.\nDescription: %s", err.Error())
 		db.Close()
-		return nil, err
+		return nil, fmt.Errorf("InitDB: %w", err)
 	}
-	// db.SetMaxIdleConns(100)
+	db.SetMaxIdleConns(100)
 	return db, err
 }
 
@@ -61,7 +56,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS sessions (
@@ -72,7 +67,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS tags (
@@ -81,7 +76,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS posts (
@@ -92,7 +87,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS comments (
@@ -104,7 +99,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS questions (
@@ -115,7 +110,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS likes (
@@ -126,7 +121,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	_, err = db.Exec(
 		`CREATE TABLE IF NOT EXISTS tags_questions (
@@ -136,7 +131,7 @@ func checkDB(db *sql.DB) error {
 		);`,
 	)
 	if err != nil {
-		return err
+		return fmt.Errorf("checkDB: %w", err)
 	}
 	return nil
 }
