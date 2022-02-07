@@ -1,12 +1,12 @@
 class UserBlock {
     static Template = document.querySelector("#tmpl-user-block");
 
-    static Nickname = UserBlock.Template.content.querySelector("#tmpl-user-block__nickname");
-    static BlockAvatarImg = UserBlock.Template.content.querySelector("#tmpl-user-block__block-img");
-    static AvatarImg = UserBlock.Template.content.querySelector("#tmpl-user-block__img");
-    static CreatedTime = UserBlock.Template.content.querySelector("#tmpl-user-block__created-time");
-    static QuestionsCount = UserBlock.Template.content.querySelector("#tmpl-user-block__questions-count");
-    static KarmaCount = UserBlock.Template.content.querySelector("#tmpl-user-block__karma-count");
+    static Nickname = UserBlock.Template.content.querySelector(".tmpl-user-block__nickname");
+    static BlockAvatarImg = UserBlock.Template.content.querySelector(".tmpl-user-block__block-img");
+    static AvatarImg = UserBlock.Template.content.querySelector(".tmpl-user-block__img");
+    static CreatedTime = UserBlock.Template.content.querySelector(".tmpl-user-block__created-time");
+    static QuestionsCount = UserBlock.Template.content.querySelector(".tmpl-user-block__questions-count");
+    static KarmaCount = UserBlock.Template.content.querySelector(".tmpl-user-block__karma-count");
 
     UserName
     UserAvatarPath
