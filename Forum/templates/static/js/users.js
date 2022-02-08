@@ -8,23 +8,23 @@ class UserBlock {
     static QuestionsCount = UserBlock.Template.content.querySelector(".tmpl-user-block__questions-count");
     static KarmaCount = UserBlock.Template.content.querySelector(".tmpl-user-block__karma-count");
 
-    UserName
-    UserAvatarPath
-    UserURL
-    UserCreatedText
-    UserQuestionsCount
-    UserKarmaCount
+    Name
+    AvatarPath
+    URL
+    CreatedText
+    QuestionsCount
+    KarmaCount
 
     // GetCopyUserBlock - returns UserBlock as HTMLelement
     static GetCopyElementUserBlock(user) {
-        UserBlock.Nickname.textContent = user.UserName
-        UserBlock.Nickname.href = user.UserURL
-        UserBlock.BlockAvatarImg.href = user.UserURL
-        UserBlock.AvatarImg.src = user.UserAvatarPath
-        UserBlock.CreatedTime.title = user.UserCreatedText
-        UserBlock.CreatedTime.textContent = user.UserCreatedText
-        UserBlock.QuestionsCount.textContent = user.UserQuestionsCount
-        UserBlock.KarmaCount.textContent = user.UserKarmaCount
+        UserBlock.Nickname.textContent = user.Name
+        UserBlock.Nickname.href = user.URL
+        UserBlock.BlockAvatarImg.href = user.URL
+        UserBlock.AvatarImg.src = user.AvatarPath
+        UserBlock.CreatedTime.title = user.CreatedText
+        UserBlock.CreatedTime.textContent = user.CreatedText
+        UserBlock.QuestionsCount.textContent = user.QuestionsCount
+        UserBlock.KarmaCount.textContent = user.KarmaCount
 
         return UserBlock.Template.content.cloneNode(true)
     }
@@ -35,12 +35,12 @@ const B_Users = document.querySelector(".users");
 //? This is temp solution
 function DownloadUsers(){
     const user = new UserBlock()
-    user.UserName = "Nickname"
-    user.UserAvatarPath = "static/img/avatar.jpeg"
-    user.UserURL = "/"
-    user.UserCreatedText = (new Date()).toISOString().split('T')[0]
-    user.UserQuestionsCount = 1
-    user.UserKarmaCount = 0
+    user.Name = "Nickname"
+    user.AvatarPath = "static/img/avatar.jpeg"
+    user.URL = "/"
+    user.CreatedText = (new Date()).toISOString().split('T')[0]
+    user.QuestionsCount = 1
+    user.KarmaCount = 0
 
     AppendUserToHTML(user)
 }
