@@ -4,33 +4,31 @@ import "time"
 
 // User -
 type User struct {
-	Id          int
-	Nickname    string
-	Fistname    string
-	Lastname    string
-	Password    string
-	CreatedTime time.Time
-	//? PHOTO
-}
-
-type IUserService interface {
-	Create(user *User) error
-	Update(user *User) error
-	DeleteByID(id int) error
-
-	GetByID(id int) (*User, error)
-	// GetByNickname(nickname string) (*model.User, error)
-	// GetAll(from, offset int) error
-	// CanLogin(user *model.User) error
+	Id        int64
+	Nickname  string
+	Fistname  string
+	Lastname  string
+	Email     string
+	Password  string
+	CreatedAt time.Time
+	Avatar    string
 }
 
 type IUserRepo interface {
 	Create(user *User) error
-	Update(user *User) error
-	DeleteByID(id int) error
+	// Update(user *User) error
+	// Delete(id int) error
+	GetByID(id int64) (*User, error)
+	GetByNickname(nickname string) (*User, error)
+	UserExist(nickname, email string) (bool, error)
+}
 
-	GetByID(id int) (*User, error)
-	// GetByNickname(nickname string) (*model.User, error)
-	// GetAll(from, offset int) error
-	// CanLogin(user *model.User) error
+type IUserService interface {
+	Register(user *User) error
+	Login(user *User) error
+	Logout(user *User) error
+	GetByID(id int64) (*User, error)
+	GetByNickname(nickname string) (*User, error)
+	GetLikedQuestions(user *User) ([]*Question, error)
+	GetCreatedQuestions(user *User) ([]*Question, error)
 }

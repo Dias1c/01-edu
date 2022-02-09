@@ -44,92 +44,39 @@ func InitDB() (*sql.DB, error) {
 
 // check the scheme
 func checkDB(db *sql.DB) error {
-	_, err := db.Exec(
-		`CREATE TABLE IF NOT EXISTS users (
-			id INTEGER PRIMARY KEY,
-			nickname TEXT,
-			email TEXT,
-			createdAt TEXT,
-			password TEXT,
-			firstName TEXT,
-			lastName TEXT
-		);`,
-	)
+	_, err := db.Exec(createUserTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS sessions (
-			id INTEGER PRIMARY KEY,
-			uuid TEXT,
-			user_id INTEGER,
-			created_at TEXT
-		);`,
-	)
+	_, err = db.Exec(createSessionsTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS tags (
-			id INTEGER PRIMARY KEY,
-			name TEXT
-		);`,
-	)
+	_, err = db.Exec(createTagsTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS posts (
-			id INTEGER PRIMARY KEY,
-			content TEXT,
-			user_id INTEGER,
-			created_at TEXT
-		);`,
-	)
+	_, err = db.Exec(createPostsTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS comments (
-			id INTEGER PRIMARY KEY,
-			content TEXT,
-			user_id INTEGER,
-			created_at TEXT,
-			post_id INTEGER
-		);`,
-	)
+	_, err = db.Exec(createCommentsTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS questions (
-			id INTEGER PRIMARY KEY,
-			post_id INTEGER,
-			title TEXT,
-			views INTEGER
-		);`,
-	)
+	_, err = db.Exec(createQuestionsTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS likes (
-			id INTEGER PRIMARY KEY,
-			user_id TEXT,
-			post_id TEXT,
-			liked INTEGER
-		);`,
-	)
+	_, err = db.Exec(createLikesTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}
-	_, err = db.Exec(
-		`CREATE TABLE IF NOT EXISTS tags_questions (
-			id INTEGER PRIMARY KEY,
-			tag_ig INTEGER,
-			question_id INTEGER
-		);`,
-	)
+	_, err = db.Exec(createTagsQuestionsTable)
+	if err != nil {
+		return fmt.Errorf("checkDB: %w", err)
+	}
+	_, err = db.Exec(createQuestionsAnswersTable)
 	if err != nil {
 		return fmt.Errorf("checkDB: %w", err)
 	}

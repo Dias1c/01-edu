@@ -2,14 +2,17 @@ package configs
 
 import (
 	"bufio"
-	"log"
+	"fmt"
 	"os"
 	"strings"
 )
 
 // setting up environment
 func SetEnv() {
-	readEnv()
+	err := readEnv()
+	if err != nil {
+		return
+	}
 	value, found := os.LookupEnv("DB_PATH")
 	if found && len(value) > 0 {
 		DB_PATH = value
@@ -30,11 +33,10 @@ func SetEnv() {
 
 // read the env file
 // for future: maybe add overwriting env
-func readEnv() {
+func readEnv() error {
 	file, err := os.Open("./configs/.env")
 	if err != nil {
-		log.Printf("Error while opening .env file\nDescription: %s", err.Error())
-		return
+		return fmt.Errorf("readEnv: %w", err)
 	}
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
@@ -51,4 +53,5 @@ func readEnv() {
 		os.Setenv(envs[0], envs[1])
 	}
 	file.Close()
+	return nil
 }
