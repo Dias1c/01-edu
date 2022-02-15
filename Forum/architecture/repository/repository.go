@@ -2,10 +2,13 @@ package repository
 
 import (
 	"database/sql"
-
 	"forum/architecture/models"
+	"forum/architecture/repository/comment"
+	"forum/architecture/repository/like"
 	"forum/architecture/repository/post"
 	"forum/architecture/repository/question"
+	"forum/architecture/repository/session"
+	"forum/architecture/repository/tag"
 	"forum/architecture/repository/user"
 )
 

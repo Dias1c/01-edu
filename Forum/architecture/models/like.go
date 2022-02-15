@@ -8,8 +8,8 @@ type Like struct {
 }
 
 type ILikeRepo interface {
-	GetLikeById(id int64) (*Like, error)
 	Create(like *Like) error
 	Update(like *Like) error
 	Delete(id int64) error
+	GetById(id int64) (*Like, error)
 }

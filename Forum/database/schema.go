@@ -47,7 +47,7 @@ const (
 	);`
 	createTagsQuestionsTable = `CREATE TABLE IF NOT EXISTS tags_questions (
 		id INTEGER PRIMARY KEY,
-		tag_ig INTEGER,
+		tag_id INTEGER,
 		question_id INTEGER
 	);`
 	createQuestionsAnswersTable = `CREATE TABLE IF NOT EXISTS questions_answers (

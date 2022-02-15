@@ -21,5 +21,6 @@ const (
 
 	// frontend constants
 	LimitQuestionPerPage = 10
-	LimitAnswersPerPagr  = 10
+	LimitAnswersPerPage  = 10
+	LimitTagsPerPage     = 25
 )

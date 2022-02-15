@@ -11,7 +11,7 @@ type Comment struct {
 }
 
 type ICommentRepo interface {
-	Create(comment *Comment) error
+	Create(postId int64, comment *Comment) error
 	// Delete(id int) error
 	GetPostComments(postId int64) ([]*Comment, error)
 }

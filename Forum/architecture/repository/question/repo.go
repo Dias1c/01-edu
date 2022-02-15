@@ -2,9 +2,9 @@ package question
 
 import (
 	"fmt"
+	"forum/configs"
 
 	model "forum/architecture/models"
-	"forum/configs"
 )
 
 func (q *QuestionRepo) Create(question *model.Question) error {
@@ -72,26 +72,6 @@ func (q *QuestionRepo) GetMostViewed() (*model.Question, error) {
 	return question, nil
 }
 
-// func (q *QuestionRepo) GetMostLiked() (*model.Question, error) {
-// 	query := `SELECT questions.*, sum(subquery.like_count) AS "like_count" FROM questions,
-// 		(SELECT questions.id, COUNT(likes.liked) AS "like_count" FROM questions
-// 			INNER JOIN likes ON questions.post_id = likes.post_id where likes.liked = ? GROUP BY questions.id
-// 		UNION ALL
-// 		SELECT questions.id, COUNT(likes.liked)*(-1) AS "like_count" FROM questions
-// 			INNER JOIN likes ON questions.post_id = likes.post_id where likes.liked = ? GROUP BY questions.id) subquery
-// 	WHERE questions.id = subquery.id GROUP BY questions.id`
-// 	row := q.db.QueryRow(query, configs.LikeValue, configs.DislikeValue)
-
-// 	question := &model.Question{}
-
-// 	err := row.Scan(&question.Id, &likeCount)
-// 	if err != nil {
-// 		return nil, fmt.Errorf("QuestionRepo.GetMostViewed: %w", err)
-// 	}
-
-// 	return question, nil
-// }
-
 // takes a page number (1, 2, 3...)
 func (q *QuestionRepo) GetByUserId(userId int64, page int) ([]*model.Question, error) {
 	query := `SELECT questions.id, questions.post_id, questions.title, questions.views FROM questions 
@@ -128,6 +108,7 @@ func (q *QuestionRepo) GetByUserId(userId int64, page int) ([]*model.Question, e
 	return questions, nil
 }
 
+// takes a page number (1, 2, 3...)
 func (q *QuestionRepo) GetByTag(tagId int64, page int) ([]*model.Question, error) {
 	query := `SELECT questions.id, questions.post_id, questions.title, questions.views FROM questions 
 	INNER JOIN posts ON questions.post_id = posts.id 
@@ -216,7 +197,7 @@ func (q *QuestionRepo) AddView(id int64) error {
 		return fmt.Errorf("QuestionRepo.AddView: %w", err)
 	}
 	if affect != 1 {
-		return fmt.Errorf("affected rows more than 1: %d", affect)
+		return fmt.Errorf("QuestionRepo.AddView affected rows more than 1: %d", affect)
 	}
 	return nil
 }

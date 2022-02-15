@@ -15,11 +15,11 @@ type Post struct {
 
 type IPostRepo interface {
 	Create(post *Post) error
+	CreateRelation(post *Post, questionId int64) error
 	// Delete(id int) error
 	GetQuestion(postId int64) (*Post, error)
-	GetQuestionAnswers(questionId int64) ([]*Post, error)
-	GetMostLikedQuestion() (*Post, error)
-	GetRate(post *Post) error
+	GetQuestionAnswers(questionId int64, page int) ([]*Post, error)
+	GetMostLikedQuestion() (int64, *Post, error)
 }
 
 type IPostService interface {
